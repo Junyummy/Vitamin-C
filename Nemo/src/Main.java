@@ -5,5 +5,6 @@ public class Main {
 		System.out.println("seo tset");
 		System.out.println("팀장독대나무다리어카센터미널뛰기러기차");
 		System.out.println("kyh test");
+		System.out.println("cheetah test");
 	}
 }
