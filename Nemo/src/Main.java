@@ -5,5 +5,6 @@ public class Main {
 		System.out.println("안녕 난 곱등이");
 		System.out.println("좀 되라 ㅅㅂ");
 		System.out.println("좀 되라 ㅅㅂ");
+		System.out.println("좀 되라 ㅅㅂ");
 	}
 }
