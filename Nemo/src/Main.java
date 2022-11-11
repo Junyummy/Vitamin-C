@@ -6,5 +6,6 @@ public class Main {
 		System.out.println("좀 되라 ㅅㅂ");
 		System.out.println("좀 되라 ㅅㅂ");
 		System.out.println("좀 되라 ㅅㅂ");
+		System.out.println("seo tset");
 	}
 }
