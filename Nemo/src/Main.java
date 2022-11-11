@@ -2,6 +2,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("1234");
-		System.out.println("¾È³ç ³­ ÀÌÅ¬¸³½º¾ß");
+		System.out.println("ì•ˆë…• ë‚œ ê³±ë“±ì´");
+		
 	}
 }
