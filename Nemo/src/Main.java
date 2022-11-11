@@ -1,8 +1,9 @@
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("¾È³çÇÏ¼¼¿ä");
-		System.out.println("¾È³ç");
+		System.out.println("ï¿½È³ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½");
+		System.out.println("ï¿½È³ï¿½");
+		System.out.println("1234");
 	
 	}
 }
