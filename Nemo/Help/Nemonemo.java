@@ -26,7 +26,26 @@ public class Nemonemo extends JFrame implements ActionListener {
 	int mouseX = -1;
 	int mouseT = -1;
 	
-	String data = "1";
+	String data = "0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 \r\n"
+			+ "0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 \r\n"
+			+ "0 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0 0 0 \r\n"
+			+ "0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 \r\n"
+			+ "0 0 0 0 0 0 1 1 1 0 1 1 1 0 1 1 1 1 0 0 \r\n"
+			+ "0 0 0 0 1 1 0 0 1 1 0 0 0 1 1 1 1 1 1 1 \r\n"
+			+ "0 0 1 1 1 1 1 1 0 1 0 0 0 1 0 0 0 0 0 0 \r\n"
+			+ "0 1 1 1 1 0 0 0 1 1 0 0 1 1 0 0 0 0 0 0 \r\n"
+			+ "0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 \r\n"
+			+ "0 0 0 0 0 0 0 1 1 1 0 0 1 0 0 0 0 0 0 0 \r\n"
+			+ "0 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 \r\n"
+			+ "0 1 1 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 \r\n"
+			+ "1 1 1 1 1 1 0 0 1 1 1 0 1 0 0 0 0 0 0 0 \r\n"
+			+ "1 0 1 1 0 0 1 1 0 1 0 0 1 0 0 0 0 0 0 0 \r\n"
+			+ "0 0 0 1 1 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 \r\n"
+			+ "0 0 0 0 0 0 0 0 1 1 1 1 0 1 1 0 1 1 0 0 \r\n"
+			+ "0 0 0 0 0 0 0 0 1 1 1 0 0 1 1 1 0 1 0 0 \r\n"
+			+ "0 0 0 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 \r\n"
+			+ "0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 \r\n"
+			+ "0 0 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0";
 	int[] temp;
 	
 	int[][] columnNums;
@@ -271,7 +290,7 @@ public class Nemonemo extends JFrame implements ActionListener {
 		
 		public StopWatchPane() {
 			setLayout(new GridBagLayout());
-			label = new JLabel(String.format("%04d:%02d:%02d.%03d", 0, 0, 0));
+			label = new JLabel(String.format("%04d:%02d:%02d.%03d", 0, 0, 0, 0));
 			
 			timer = new Timer(100, new ActionListener() {
 				
