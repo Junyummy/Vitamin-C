@@ -13,7 +13,7 @@ public class CloseableFrame extends JFrame //스윙의 JFrame 상속
 		super(title);
 		this.addWindowListener(this);
 	}
-	
+	//adsad
 	@Override
 	public void windowClosing(WindowEvent e) {this.dispose();}
 	public void windowOpened(WindowEvent e) {}

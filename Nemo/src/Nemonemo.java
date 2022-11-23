@@ -49,15 +49,12 @@ public class Nemonemo extends CloseableFrame
 	
 		public Nemonemo()
 		{
-			this.setTitle("Nemonemo Logic"); //애플리케이션 창의 
-타이틀 설정
+			this.setTitle("Nemonemo Logic"); //애플리케이션 창의 타이틀 설정
 			this.setSize(341, 390); //애플리케이션 크기 설정
 			
 			//변수 초기화
-			temp = new int[100]; //가로 10칸, 세로 10칸으로 
-총 100칸 선언
-			for(int i=0; i<100; i++) //플레이어가 입력하기 전에 
-0으로 모두 초기화
+			temp = new int[100]; //가로 10칸, 세로 10칸으로 총 100칸 선언
+			for(int i=0; i<100; i++) //플레이어가 입력하기 전에 0으로 모두 초기화
 			{
 				temp[i] = 0;
 			}
@@ -121,8 +118,7 @@ public class Nemonemo extends CloseableFrame
 			  helpMenu.add(aboutGame);
 		}
 
-		public void showLocation(int mouseX, int mouseY) //마우스 커서의
- 위치를 표시
+		public void showLocation(int mouseX, int mouseY) //마우스 커서의위치를 표시
 		{
 			if(mouseX!=this.mouseX) //마우스 커서가 위치한 열이 변한 경우
 			{
@@ -143,11 +139,9 @@ public class Nemonemo extends CloseableFrame
 				for(int i=0; (i<10)&&endFlag; i++)
 				{
 					if((data.charAt(j*10+i)=='1')&&(temp[j*10+i]!=1))
-						endFlag=false; //채워야 할 칸을 모두
- 채웠는지 검사
+						endFlag=false; //채워야 할 칸을 모두채웠는지 검사
 					else if((data.charAt(j*10+i)!='1')&&(temp[j*10+i]==1))
-						endFlag=false; //채우지 않아야 할 칸을
- 채웠는지 검사
+						endFlag=false; //채우지 않아야 할 칸을채웠는지 검사
 				}
 			if(endFlag)
 			{
@@ -156,16 +150,13 @@ public class Nemonemo extends CloseableFrame
 			}
 		}
 		
-		public void actionPerformed(ActionEvent e) //선택한 메뉴에 따라
- 실행할 루틴을 호출
+		public void actionPerformed(ActionEvent e) //선택한 메뉴에 따라실행할 루틴을 호출
 		{
 			String cmd = e.getActionCommand();
 			
-			if(cmd.equals("newGame")) //네모네모로직 데이터를 불러와 
-새 게임을 시작
+			if(cmd.equals("newGame")) //네모네모로직 데이터를 불러와 새 게임을 시작
 				showOpenDialog();
-			else if(cmd.equals("answerGame")) //Answer를 선택하면
- 정답을 출력
+			else if(cmd.equals("answerGame")) //Answer를 선택하면정답을 출력
 			{
 				this.endFlag = true;
 				board.repaint();
@@ -181,8 +172,7 @@ public class Nemonemo extends CloseableFrame
 		{
 			FileDialog fd = new FileDialog(this, "Open a File", FileDialog.LOAD);
 			
-			fd.setFile("*.nemo; *.NEMO"); //데이터 파일의 확장자는
- nemo 또는 NEMO
+			fd.setFile("*.nemo; *.NEMO"); //데이터 파일의 확장자는nemo 또는 NEMO
 			fd.setVisible(true);
 			
 			if(fd.getFile()!=null)
@@ -226,8 +216,7 @@ public class Nemonemo extends CloseableFrame
 				}
 				this.endFlag = false;
 				
-				//불러온 데이터에 맞춰 column, 
-row의 숫자를 재생성하고 깨끗한 보드를 다시 출력
+				//불러온 데이터에 맞춰 column, row의 숫자를 재생성하고 깨끗한 보드를 다시 출력
 				col.getColumn();
 				row.getRow();
 				board.repaint();

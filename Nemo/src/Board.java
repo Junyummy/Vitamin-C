@@ -12,8 +12,7 @@ public class Board extends Canvas //Canvas 클래스를 상속
 	Image offScr; //더블버퍼링을 위한 가상 화면
 	Graphics offG;
 	
-	public Board(Nemonemo parent) //Nemonemo 클래스의 객체를 보관하고 
-리스너를 선언
+	public Board(Nemonemo parent) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
 	{
 		this.parent = parent; //Nemonemo 클래스의 객체를 보관
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
@@ -159,14 +158,12 @@ public class Board extends Canvas //Canvas 클래스를 상속
 		if((x/20)>=10) return;
 		if((y/20)>=10) return;
 		
-		parent.showLocation(x/20, y/20); //column과 row에 마우스 커서의
- 위치를 표시
+		parent.showLocation(x/20, y/20); //column과 row에 마우스 커서의위치를 표시
 		repaint();		
 	}
 	public void mouseExited(MouseEvent e) //마우스가 보드를 벗어난 경우
 	{
-		parent.showLocation(-1, -1); //column과 row에 마우스 커서의 
-위치를 표시하지 않음
+		parent.showLocation(-1, -1); //column과 row에 마우스 커서의 위치를 표시하지 않음
 		this.drag = false;
 		repaint();	
 	}

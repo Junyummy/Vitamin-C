@@ -51,7 +51,7 @@ public class AboutDialog extends JDialog //스윙의 JDialog 상속
 		
 		this.add("Center", aboutPanel);
 	}
-	
+	//asas
 	@Override
 	public void windowClosing(WindowEvent e) {this.dispose();}
 	public void windowOpened(WindowEvent e) {}

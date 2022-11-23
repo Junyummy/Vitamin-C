@@ -8,8 +8,7 @@ public class Column extends Canvas //Canvas 클래스를 상속
 	Image offScr; //더블버퍼링을 위한 가상 화면
 	Graphics offG;
 	
-	public Column(Nemonemo parent) //Nemonemo 클래스의 객체를 보관하고 모든
- 열의 연속한 '1'의 개수를 계산
+	public Column(Nemonemo parent) //Nemonemo 클래스의 객체를 보관하고 모든열의 연속한 '1'의 개수를 계산
 	{
 		this.parent = parent; //Nemonemo 클래스의 객체를 보관
 		getColumn();
