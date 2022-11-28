@@ -10,7 +10,7 @@ public class AboutDialog extends JDialog //스윙의 JDialog 상속
 	JButton ok;
 	JLabel titleLabel, nameLabel;
 	
-	public AboutDialog(Nemonemo parent)
+	public AboutDialog(Frame parent)
 	{
 		super(parent, "Nemonemo Logic", true); //다이얼로그의 타이틀 설정
 		this.setSize(240, 190); //다이얼로그 크기 설정

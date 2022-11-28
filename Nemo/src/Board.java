@@ -4,26 +4,37 @@ import java.awt.event.*;
 public class Board extends Canvas //Canvas 클래스를 상속
 	implements MouseListener, MouseMotionListener
 {	
-	Nemonemo parent; //Nemonemo 클래스의 객체를 저장
+	OtherFrame.Nemonemo parent; //Nemonemo 클래스의 객체를 저장
 	boolean drag = false; //마우스 드래그 상태인지 여부
 	int startX, startY; //마우스 드래그를 시작한 좌표
 	int endX, endY; //마우스 드래그를 끝마친 좌표
 	
+	int stage = 0;
+	
+	private OtherFrame OtherFrame;
+	private Board1 board1 = new Board1(OtherFrame);
+	
+	private Dimension dim;
 	Image offScr; //더블버퍼링을 위한 가상 화면
 	Graphics offG;
 	
-	public Board(Nemonemo parent) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
+	public Board(OtherFrame.Nemonemo nemo) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
 	{
-		this.parent = parent; //Nemonemo 클래스의 객체를 보관
+		this.parent = nemo; //Nemonemo 클래스의 객체를 보관
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
 		this.addMouseMotionListener(this);
 	}
 	
+	public void initBufferd() {
+		dim = getSize();
+		setBackground(Color.white);
+		offScr = createImage(dim.width,dim.height);
+		offG = offScr.getGraphics();
+	}
+	
 	public void paint (Graphics g) //화면에 보드의 상태를 출력
 	{
-		offScr = createImage(201, 201); //가상 화면 생성
-		offG = offScr.getGraphics();
-		
+		initBufferd();
 		for(int j=0; j<10; j++)
 			for(int i=0; i<10; i++)
 			{
@@ -32,7 +43,7 @@ public class Board extends Canvas //Canvas 클래스를 상속
 					if(parent.data.charAt(j*10+i)=='1')
 					{
 					offG.fillRect(i*20, j*20, 20, 20); 
-//칸을 채워서 문제가 풀렸음을 표시
+	//칸을 채워서 문제가 풀렸음을 표시
 					}
 				}
 				else
@@ -40,13 +51,13 @@ public class Board extends Canvas //Canvas 클래스를 상속
 					if(parent.temp[j*10+i]==1)
 					{
 						offG.setColor(Color.blue); 
-//게임 진행중일 때는 ●표시
+	//게임 진행중일 때는 ●표시
 						offG.fillOval(i*20, j*20, 20, 20);
 					}
 					else if(parent.temp[j*10+i]==2)
 					{
 						offG.setColor(Color.red); 
-//게임 진행중일 때는 X표시
+	//게임 진행중일 때는 X표시
 						offG.drawLine(i*20, j*20, i*20+20, j*20+20);
 						offG.drawLine(i*20, j*20+20, i*20+20, j*20);
 					}
@@ -105,9 +116,9 @@ public class Board extends Canvas //Canvas 클래스를 상속
 			offG.drawLine(0, i-1, 200, i-1);
 			offG.drawLine(0, i+1, 200, i+1);
 		}
-		
-		g.drawImage(offScr, 0, 0, this); //가상 화면을 실제 화면으로 복사
+		g.drawImage(offScr, 0, 0, null); //가상 화면을 실제 화면으로 복사
 	}
+
 	
 	public void update(Graphics g)
 	{
@@ -140,10 +151,12 @@ public class Board extends Canvas //Canvas 클래스를 상속
 //마우스 오른쪽 버튼
 		{
 			setTemp(x, y, 2);
+			stage++;
 		}
 		else //마우스 왼쪽 버튼 
 		{
 			setTemp(x, y, 1);
+			stage--;
 		}
 		
 		parent.display(); //퍼즐이 풀렸는지 검사
@@ -247,4 +260,5 @@ public class Board extends Canvas //Canvas 클래스를 상속
 				parent.temp[x/20+y/20*10] = value;
 		}
 	}
+
 }

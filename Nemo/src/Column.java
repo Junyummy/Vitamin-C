@@ -3,14 +3,14 @@ import java.awt.*; //Color 상수 등을 위한 awt 패키지 선언
 public class Column extends Canvas //Canvas 클래스를 상속
 {
 
-	Nemonemo parent; //Nemonemo 클래스의 객체를 저장
+	OtherFrame.Nemonemo parent; //Nemonemo 클래스의 객체를 저장
 	
 	Image offScr; //더블버퍼링을 위한 가상 화면
 	Graphics offG;
 	
-	public Column(Nemonemo parent) //Nemonemo 클래스의 객체를 보관하고 모든열의 연속한 '1'의 개수를 계산
+	public Column(OtherFrame.Nemonemo nemo) //Nemonemo 클래스의 객체를 보관하고 모든열의 연속한 '1'의 개수를 계산
 	{
-		this.parent = parent; //Nemonemo 클래스의 객체를 보관
+		this.parent = nemo;
 		getColumn();
 	}
 	
