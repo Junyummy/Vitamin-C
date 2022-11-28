@@ -51,7 +51,7 @@ public class Board extends Canvas //Canvas 클래스를 상속
 					if(parent.temp[j*10+i]==1)
 					{
 						offG.setColor(Color.blue); 
-	//게임 진행중일 때는 ●표시
+	//게임 진행중일 때는 네모표시
 						offG.fillRect(i*20, j*20, 20, 20);
 					}
 					else if(parent.temp[j*10+i]==2)
