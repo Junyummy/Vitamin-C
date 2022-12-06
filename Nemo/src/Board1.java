@@ -5,7 +5,7 @@ import java.awt.event.*;
 public class Board1 extends Canvas //Canvas 클래스를 상속
 	implements MouseListener, MouseMotionListener
 {	
-	OtherFrame.MainPanel parent; //Nemonemo 클래스의 객체를 저장
+	MainPanel parent; //Nemonemo 클래스의 객체를 저장
 	boolean drag = false; //마우스 드래그 상태인지 여부
 	int startX, startY; //마우스 드래그를 시작한 좌표
 	int endX, endY; //마우스 드래그를 끝마친 좌표
@@ -14,7 +14,7 @@ public class Board1 extends Canvas //Canvas 클래스를 상속
 	Image offScr; //더블버퍼링을 위한 가상 화면
 	Graphics offG;
 	
-	public Board1(OtherFrame.MainPanel mainp) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
+	public Board1(MainPanel mainp) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
 	{
 		this.parent = mainp; //Nemonemo 클래스의 객체를 보관
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
@@ -36,6 +36,8 @@ public class Board1 extends Canvas //Canvas 클래스를 상속
 		offG.drawString("10X10", 85,20);
 		offG.setColor(Color.blue);
 		offG.fillRect(30,30,60,60);
+		offG.setColor(Color.red);
+		offG.fillRect(90,30,60,60);
 		g.drawImage(offScr, 0, 0, null); //가상 화면을 실제 화면으로 복사
 	}
 	
@@ -82,6 +84,9 @@ public class Board1 extends Canvas //Canvas 클래스를 상속
 		{
 			if((x>29 && x<91) && (y>29 && y<91)) {
 				parent.win.change("nemo");
+			}
+			if((x>89 && x<151) && (y>29 && y<91)) {
+				parent.win.change("nemo1");
 			}
 		}
 	}

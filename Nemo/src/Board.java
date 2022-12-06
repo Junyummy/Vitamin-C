@@ -4,21 +4,16 @@ import java.awt.event.*;
 public class Board extends Canvas //Canvas 클래스를 상속
 	implements MouseListener, MouseMotionListener
 {	
-	OtherFrame.Nemonemo parent; //Nemonemo 클래스의 객체를 저장
+	Nemonemo parent; //Nemonemo 클래스의 객체를 저장
 	boolean drag = false; //마우스 드래그 상태인지 여부
 	int startX, startY; //마우스 드래그를 시작한 좌표
 	int endX, endY; //마우스 드래그를 끝마친 좌표
-	
-	int stage = 0;
-	
-	private OtherFrame OtherFrame;
-	private Board1 board1 = new Board1(OtherFrame);
-	
+		
 	private Dimension dim;
 	Image offScr; //더블버퍼링을 위한 가상 화면
 	Graphics offG;
 	
-	public Board(OtherFrame.Nemonemo nemo) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
+	public Board(Nemonemo nemo) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
 	{
 		this.parent = nemo; //Nemonemo 클래스의 객체를 보관
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
@@ -151,12 +146,10 @@ public class Board extends Canvas //Canvas 클래스를 상속
 //마우스 오른쪽 버튼
 		{
 			setTemp(x, y, 2);
-			stage++;
 		}
 		else //마우스 왼쪽 버튼 
 		{
 			setTemp(x, y, 1);
-			stage--;
 		}
 		
 		parent.display(); //퍼즐이 풀렸는지 검사
