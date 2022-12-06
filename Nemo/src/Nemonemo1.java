@@ -12,11 +12,13 @@ public class Nemonemo1 extends AbNemo{
 	OtherFrame other;
 	JPanel nemo1;
 	
-	Board2 board;
+	Dog2Board board;
 	Column1 col;
 	Row1 row;
 	
 	String data = "1111000000011100001101010000101111111110111111111000011111100001111100000100010000010001000011001100"; //문제의 정답(초기답:강아지)
+	
+	public static boolean endFlag = false; //퍼즐이 풀렸는지 여부
 	
 	public Nemonemo1(OtherFrame.JPanelTest win)
 	{
@@ -50,7 +52,7 @@ public class Nemonemo1 extends AbNemo{
 		row.setBounds(0, 120, 120, 201);
 			
 		//board 생성
-		board = new Board2(this);
+		board = new Dog2Board(this);
 		this.add(board);
 		board.setFont(new Font("SansSerif", Font.BOLD, 14));
 		board.setBounds(120, 120, 201, 201);
@@ -98,9 +100,13 @@ public class Nemonemo1 extends AbNemo{
 			}
 		if(endFlag)
 		{
-			this.endFlag = endFlag;
+			Nemonemo1.endFlag = endFlag;
 			board.repaint(); //퍼즐이 다 풀렸으면 보드의 칸을 채움
 		}
+	}
+	
+	public boolean getendFlag() {
+		return Nemonemo1.endFlag;
 	}
 
 	@Override
@@ -115,7 +121,7 @@ public class Nemonemo1 extends AbNemo{
 			
 		else if(cmd.equals("answerGame")) //Answer를 선택하면정답을 출력
 		{
-			this.endFlag = true;
+			Nemonemo1.endFlag = true;
 			board.repaint();
 		}
 		else if(cmd.equals("exitGame")) //게임 종료

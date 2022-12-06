@@ -12,7 +12,7 @@ public class MainPanel extends JPanel
 		OtherFrame.JPanelTest win;
 		JPanel Mainp;
 		
-		Board1 board1;
+		MainBoard board1;
 		
 		//마우스 커서의 좌표
 		int mouseX = -1;
@@ -40,7 +40,7 @@ public class MainPanel extends JPanel
 			Mainp.setLayout(null); //null 레이아웃으로 설정			
 			
 			//board 생성
-			board1 = new Board1(this);
+			board1 = new MainBoard(this);
 			this.add(board1);
 			board1.setFont(new Font("SansSerif", Font.BOLD, 14));
 			board1.setBounds(120, 120, 201, 201);

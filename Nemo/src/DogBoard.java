@@ -1,7 +1,7 @@
 import java.awt.*; //Color 상수 등을 위한 awt 패키지 선언
 import java.awt.event.*;
 
-public class Board extends Canvas //Canvas 클래스를 상속
+public class DogBoard extends Canvas //Canvas 클래스를 상속
 	implements MouseListener, MouseMotionListener
 {	
 	Nemonemo parent; //Nemonemo 클래스의 객체를 저장
@@ -13,7 +13,7 @@ public class Board extends Canvas //Canvas 클래스를 상속
 	Image offScr; //더블버퍼링을 위한 가상 화면
 	Graphics offG;
 	
-	public Board(Nemonemo nemo) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
+	public DogBoard(Nemonemo nemo) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
 	{
 		this.parent = nemo; //Nemonemo 클래스의 객체를 보관
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
@@ -163,7 +163,6 @@ public class Board extends Canvas //Canvas 클래스를 상속
 		
 		if((x/20)>=10) return;
 		if((y/20)>=10) return;
-		
 		parent.showLocation(x/20, y/20); //column과 row에 마우스 커서의위치를 표시
 		repaint();		
 	}

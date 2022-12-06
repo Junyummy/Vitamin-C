@@ -17,7 +17,7 @@ public abstract class AbNemo extends JPanel{
 	int rowNums[][]; //해당 행에 연속한 '1'의 개수를 표시
 	int numOfRow[]; //'0'으로 끊어진 연속한 1의 개수가 몇 개인가를 표시
 	
-	boolean endFlag = false; //퍼즐이 풀렸는지 여부
+	
 	
 	public abstract void showLocation(int mouseX, int mouseY);//마우스 커서의위치를 표시
 	public abstract void display();

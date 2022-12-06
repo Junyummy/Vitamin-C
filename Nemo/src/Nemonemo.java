@@ -13,14 +13,14 @@ public class Nemonemo extends AbNemo
 		OtherFrame.JPanelTest win;
 		//메뉴
 		
-		Board board;
+		DogBoard board;
 		Column col;
 		Row row;
 		//부착(add)할 클래스의 선언
 		
 		String data = "0001000000011100001101010000101111111110111111111000011111100001111100000100010000010001000011001100"; //문제의 정답(초기답:강아지)
 
-		
+		public static boolean endFlag = false; //퍼즐이 풀렸는지 여부
 		
 		public Nemonemo(OtherFrame.JPanelTest win)
 		{
@@ -54,7 +54,7 @@ public class Nemonemo extends AbNemo
 			row.setBounds(0, 120, 120, 201);
 				
 			//board 생성
-			board = new Board(this);
+			board = new DogBoard(this);
 			this.add(board);
 			board.setFont(new Font("SansSerif", Font.BOLD, 14));
 			board.setBounds(120, 120, 201, 201);
@@ -100,11 +100,16 @@ public class Nemonemo extends AbNemo
 				}
 			if(endFlag)
 			{
-				this.endFlag = endFlag;
+				Nemonemo.endFlag = endFlag;
+				System.out.println(Nemonemo.endFlag);
 				board.repaint(); //퍼즐이 다 풀렸으면 보드의 칸을 채움
 			}
 		}
-			
+		
+		public boolean getendFlag() {
+			return Nemonemo.endFlag;
+		}
+		
 		public void actionPerformed(ActionEvent e) //선택한 메뉴에 따라실행할 루틴을 호출
 		{
 			String cmd = e.getActionCommand();
@@ -116,7 +121,7 @@ public class Nemonemo extends AbNemo
 				
 			else if(cmd.equals("answerGame")) //Answer를 선택하면정답을 출력
 			{
-				this.endFlag = true;
+				Nemonemo.endFlag = true;
 				board.repaint();
 			}
 			else if(cmd.equals("exitGame")) //게임 종료
@@ -130,7 +135,6 @@ public class Nemonemo extends AbNemo
 				
 		}
 			
-
 
 		//메뉴에서 New Game 선택 시, 퍼즐 데이터를 불러오는 메소드
 //		public void showOpenDialog()

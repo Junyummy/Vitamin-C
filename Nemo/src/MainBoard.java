@@ -2,21 +2,25 @@ import java.awt.*; //Color 상수 등을 위한 awt 패키지 선언
 import java.awt.event.*;
 
 
-public class Board1 extends Canvas //Canvas 클래스를 상속
+public class MainBoard extends Canvas //Canvas 클래스를 상속
 	implements MouseListener, MouseMotionListener
 {	
 	MainPanel parent; //Nemonemo 클래스의 객체를 저장
+	OtherFrame.JPanelTest win;
+	Nemonemo nemo;
+	Nemonemo1 nemo1;
 	boolean drag = false; //마우스 드래그 상태인지 여부
 	int startX, startY; //마우스 드래그를 시작한 좌표
 	int endX, endY; //마우스 드래그를 끝마친 좌표
-	
 	private Dimension dim;
 	Image offScr; //더블버퍼링을 위한 가상 화면
 	Graphics offG;
 	
-	public Board1(MainPanel mainp) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
+	public MainBoard(MainPanel mainp) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
 	{
 		this.parent = mainp; //Nemonemo 클래스의 객체를 보관
+		nemo = new Nemonemo(win);
+		nemo1 = new Nemonemo1(win);
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
 		this.addMouseMotionListener(this);
 	}
@@ -34,14 +38,27 @@ public class Board1 extends Canvas //Canvas 클래스를 상속
 		offG.setColor(Color.black);
 		offG.setFont(new Font("SansSerif", Font.BOLD, 14));
 		offG.drawString("10X10", 85,20);
-		offG.setColor(Color.blue);
-		offG.fillRect(30,30,60,60);
-		offG.setColor(Color.red);
-		offG.fillRect(90,30,60,60);
+		if(nemo.getendFlag()) {
+			offG.setColor(Color.black);
+			offG.fillRect(30, 30, 60, 60);
+		}
+		else {
+			offG.setColor(Color.blue);
+			offG.fillRect(30,30,60,60);
+		}
+		if(nemo1.getendFlag()) {
+			offG.setColor(Color.green);
+			offG.fillRect(90, 30, 60, 60);
+		}
+		else {
+			offG.setColor(Color.red);
+			offG.fillRect(90,30,60,60);
+		}
+		
 		g.drawImage(offScr, 0, 0, null); //가상 화면을 실제 화면으로 복사
 	}
 	
-	public Board1(ActionListener actionListener) {
+	public MainBoard(ActionListener actionListener) {
 		// TODO Auto-generated constructor stub
 	}
 
