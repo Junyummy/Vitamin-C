@@ -45,9 +45,19 @@ public class DogBoard extends Canvas //Canvas 클래스를 상속
 				{
 					if(parent.temp[j*10+i]==1)
 					{
-						offG.setColor(Color.blue); 
+						if(parent.data.charAt(j*10+i)!='1') {
+							offG.setColor(Color.red); 
+							offG.drawLine(i*20, j*20, i*20+20, j*20+20);
+							offG.drawLine(i*20, j*20+20, i*20+20, j*20);
+							parent.temp[j*10+i] = 2;
+							
+						}
+						else {
+							offG.setColor(Color.blue); 
+							offG.fillRect(i*20, j*20, 20, 20);
+						}
 	//게임 진행중일 때는 네모표시
-						offG.fillRect(i*20, j*20, 20, 20);
+						
 					}
 					else if(parent.temp[j*10+i]==2)
 					{
@@ -57,7 +67,9 @@ public class DogBoard extends Canvas //Canvas 클래스를 상속
 						offG.drawLine(i*20, j*20+20, i*20+20, j*20);
 					}
 				}
+				
 			}
+			
 		if(drag) //마우스를 드래그한 경우
 		{
 			offG.setColor(Color.yellow);
@@ -141,16 +153,26 @@ public class DogBoard extends Canvas //Canvas 클래스를 상속
 		if((x/20)>=10) return;
 		if((y/20)>=10) return;
 		if(parent.endFlag)return;
+		if('0' == parent.data.charAt(10*(startY)+startX)) {
+			parent.temp[startY*10+startX] = 2;
+			parent.heart--;
+			if(parent.heart == 0) {
+				parent.win.change("mainp");
+			}
+		}
+		else {
+			if((e.getModifiers() & InputEvent.BUTTON3_MASK)!=0) 
+				//마우스 오른쪽 버튼
+						{
+							setTemp(x, y, 2);
+						}
+						else //마우스 왼쪽 버튼 
+						{
+							setTemp(x, y, 1);
+						}
+		}
 		
-		if((e.getModifiers() & InputEvent.BUTTON3_MASK)!=0) 
-//마우스 오른쪽 버튼
-		{
-			setTemp(x, y, 2);
-		}
-		else //마우스 왼쪽 버튼 
-		{
-			setTemp(x, y, 1);
-		}
+		
 		
 		parent.display(); //퍼즐이 풀렸는지 검사
 		this.drag = false;

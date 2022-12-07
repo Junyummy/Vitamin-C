@@ -13,6 +13,7 @@ public class Nemonemo extends AbNemo
 		OtherFrame.JPanelTest win;
 		//메뉴
 		
+		int heart = 4;
 		DogBoard board;
 		Column col;
 		Row row;
@@ -101,7 +102,6 @@ public class Nemonemo extends AbNemo
 			if(endFlag)
 			{
 				Nemonemo.endFlag = endFlag;
-				System.out.println(Nemonemo.endFlag);
 				board.repaint(); //퍼즐이 다 풀렸으면 보드의 칸을 채움
 			}
 		}

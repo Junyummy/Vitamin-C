@@ -44,18 +44,6 @@ public class MainPanel extends JPanel
 			this.add(board1);
 			board1.setFont(new Font("SansSerif", Font.BOLD, 14));
 			board1.setBounds(120, 120, 201, 201);
-			
-			JButton btn = new JButton("버튼");
-	        btn.setSize(70, 20);
-	        btn.setLocation(0, 0);
-	        add(btn);
-	        btn.addActionListener(new MyActionListener());
 		}
-		class MyActionListener implements ActionListener { // 버튼 키 눌리면 패널 1번 호출
-	        @Override
-	        public void actionPerformed(ActionEvent e) {
-	            win.change("nemo");
-	        }
-	    }
 		
-	}
+}
