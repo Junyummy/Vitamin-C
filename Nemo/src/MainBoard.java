@@ -32,31 +32,10 @@ public class MainBoard extends Canvas //Canvas 클래스를 상속
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
 		this.addMouseMotionListener(this);
 		
-		bgplay();
+		
 	}
 	
-	private void bgplay() {
-		Player jlPlayer = null;
-        try {
-            FileInputStream fileInputStream = new FileInputStream("resources/Empty.mp3");
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
-            jlPlayer = new Player(bufferedInputStream);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        
-        final Player player = jlPlayer;
-        new Thread() {
-            public void run() {
-                try {
-                	player.play();
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                }
-            }
-        }.start();
-    }
-	
+
 
 	
 	public void initBufferd() {

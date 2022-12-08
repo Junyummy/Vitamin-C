@@ -50,7 +50,7 @@ public class OtherFrame extends JFrame
 	     win.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	     win.setSize(500, 500);
 	     win.setVisible(true);
-		
+	     win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 		
 	private JMenuBar createMenuBar()
