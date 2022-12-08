@@ -45,23 +45,23 @@ public class Nemonemo extends AbNemo
 			col = new Column(this);
 			this.add(col);
 			col.setFont(new Font("SansSerif", Font.BOLD, 14));
-			col.setBounds(120, 0, 201, 120);
+			col.setBounds(120, 0, 900, 120);
 			col.repaint();
 				
 			//row 생성
 			row = new Row(this);
 			this.add(row);
 			row.setFont(new Font("SansSerif", Font.BOLD, 14));
-			row.setBounds(0, 120, 120, 201);
+			row.setBounds(0, 120, 120, 900);
 				
 			//board 생성
 			board = new DogBoard(this);
 			this.add(board);
 			board.setFont(new Font("SansSerif", Font.BOLD, 14));
-			board.setBounds(120, 120, 201, 201);
+			board.setBounds(120, 120, 900, 900);
 			
-			JButton btn = new JButton("버튼");
-	        btn.setSize(70, 20);
+			JButton btn = new JButton("돌아가기");
+	        btn.setSize(110, 20);
 	        btn.setLocation(10, 10);
 	        add(btn);
 	        btn.addActionListener(new MyActionListener());

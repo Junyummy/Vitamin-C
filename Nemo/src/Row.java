@@ -51,12 +51,13 @@ public class Row extends Canvas //Canvas 클래스를 상속
 		
 	public void paint (Graphics g) //화면에 row를 출력
 	{
-		offScr = createImage(121, 201); //가상 화면 생성
+		offScr = createImage(121, 900); //가상 화면 생성
+		setBackground(Color.white);
 		offG = offScr.getGraphics();
 		if(parent.mouseY!=-1)
 		{
 			offG.setColor(Color.yellow);
-			offG.fillRect(0, 20*parent.mouseY, 120, 19); 
+			offG.fillRect(0, 40*parent.mouseY, 120, 39); 
 //마우스 커서가 있는 행의 경우
 		}
 		
@@ -64,23 +65,25 @@ public class Row extends Canvas //Canvas 클래스를 상속
 			
 		for(int i=0; i<10; i++)
 		{
-			offG.drawLine(0, i*20, 120, i*20);
+			offG.drawLine(0, i*40, 120, i*40);
+			offG.setFont(new Font("함초롬돋움",Font.BOLD, 20));
 			for(int j=0; j<parent.numOfRow[i]; j++) //숫자 출력
 			{			if(String.valueOf(parent.rowNums[i][j]).length()<2)
-					offG.drawString(String.valueOf(parent.rowNums[i][j]), (100-parent.numOfRow[i]*20)+j*20+27, i*20+18);
+					
+					offG.drawString(String.valueOf(parent.rowNums[i][j]), (120-parent.numOfRow[i]*40)+j*40+27, i*40+27);
 				else
-					offG.drawString(String.valueOf(parent.rowNums[i][j]), (100-parent.numOfRow[i]*20)+j*20+21, i*20+18);
+					offG.drawString(String.valueOf(parent.rowNums[i][j]), (120-parent.numOfRow[i]*40)+j*40+21, i*40+27);
 			}
 		}
 				
-		for(int i=0; i<=20*10; i+=20*5)
+		for(int i=0; i<=40*10; i+=40*5)
 		{
 			offG.drawLine(0, i-1, 120, i-1);
 			offG.drawLine(0, i+1, 120, i+1);
 		}
 				
-		offG.drawLine(0, 200, 120, 200);
-		offG.drawLine(120, 0, 120, 200);
+		offG.drawLine(0, 400, 120, 400);
+		offG.drawLine(120, 0, 120, 400);
 				
 		g.drawImage(offScr, 0, 0, this);
 	}

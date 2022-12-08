@@ -40,17 +40,18 @@ public class OtherFrame extends JFrame
 	{
 		
 		 JPanelTest win = new JPanelTest();
-		 this.setJMenuBar(createMenuBar());
+		 win.setJMenuBar(createMenuBar());
 	     win.setTitle("frame test");
 	     win.mainp = new MainPanel(win);
 	     win.nemo = new Nemonemo(win);
 	     win.nemo1 = new Nemonemo1(win);
-	 
+	     win.setBackground(Color.white);
 	     win.add(win.mainp);
 	     win.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-	     win.setSize(500, 500);
+	     win.setSize(900, 900);
 	     win.setVisible(true);
 	     win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
 	}
 		
 	private JMenuBar createMenuBar()

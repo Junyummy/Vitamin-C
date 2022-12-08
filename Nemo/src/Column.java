@@ -52,12 +52,13 @@ public class Column extends Canvas //Canvas 클래스를 상속
 		
 	public void paint (Graphics g) //화면에 column을 출력
 	{
-		offScr = createImage(201, 121); //가상 화면 생성
+		offScr = createImage(401, 121); //가상 화면 생성
+		setBackground(Color.white);
 		offG = offScr.getGraphics();
 		if(parent.mouseX!=-1)
 		{
 			offG.setColor(Color.yellow);
-			offG.fillRect(20*parent.mouseX, 0, 19, 120); 
+			offG.fillRect(40*parent.mouseX, 0, 39, 120); 
 //마우스 커서가 있는 열의 경우
 		}
 		
@@ -65,24 +66,25 @@ public class Column extends Canvas //Canvas 클래스를 상속
 			
 		for(int i=0; i<10; i++)
 		{
-			offG.drawLine(i*20, 0, i*20, 220);
+			offG.drawLine(i*40, 0, i*40, 220);
+			offG.setFont(new Font("함초롬돋움",Font.BOLD, 20));
 			for(int j=0; j<parent.numOfColumn[i]; j++) //숫자 출력
 			{
 				if(String.valueOf(parent.columnNums[i][j]).length()<2)
-					offG.drawString(String.valueOf(parent.columnNums[i][j]), i*20+9, (100-parent.numOfColumn[i]*20+j*20)+39);
+					offG.drawString(String.valueOf(parent.columnNums[i][j]), i*40+17, (120-parent.numOfColumn[i]*40+j*40)+39);
 				else
-					offG.drawString(String.valueOf(parent.columnNums[i][j]), i*20+1, (100-parent.numOfColumn[i]*20+j*20)+39);
+					offG.drawString(String.valueOf(parent.columnNums[i][j]), i*40+9, (120-parent.numOfColumn[i]*40+j*40)+39);
 			}
 		}
 				
-		for(int i=0; i<=20*10; i+=20*5)
+		for(int i=0; i<=40*10; i+=40*5)
 		{
 			offG.drawLine(i-1, 0, i-1, 120);
 			offG.drawLine(i+1, 0, i+1, 120);
 		}
 				
-		offG.drawLine(200, 0, 200, 120);
-		offG.drawLine(0, 120, 200, 120);
+		offG.drawLine(400, 0, 400, 120);
+		offG.drawLine(0, 120, 400, 120);
 				
 		g.drawImage(offScr, 0, 0, this);
 	}
