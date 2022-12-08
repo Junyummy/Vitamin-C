@@ -119,6 +119,9 @@ public class Dog2Board extends Canvas //Canvas 클래스를 상속
 	{
 		paint(g);
 	}
+	
+	
+	
 	@Override
 	public void mousePressed(MouseEvent e) //플레이어가 마우스 버튼을 누른 경우
 	{

@@ -1,5 +1,13 @@
 import java.awt.*; //Color 상수 등을 위한 awt 패키지 선언
 import java.awt.event.*;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
+import javazoom.jl.player.Player;
 
 
 public class MainBoard extends Canvas //Canvas 클래스를 상속
@@ -23,7 +31,33 @@ public class MainBoard extends Canvas //Canvas 클래스를 상속
 		nemo1 = new Nemonemo1(win);
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
 		this.addMouseMotionListener(this);
+		
+		bgplay();
 	}
+	
+	private void bgplay() {
+		Player jlPlayer = null;
+        try {
+            FileInputStream fileInputStream = new FileInputStream("resources/Empty.mp3");
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+            jlPlayer = new Player(bufferedInputStream);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        final Player player = jlPlayer;
+        new Thread() {
+            public void run() {
+                try {
+                	player.play();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }.start();
+    }
+	
+
 	
 	public void initBufferd() {
 		dim = getSize();
