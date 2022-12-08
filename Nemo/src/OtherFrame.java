@@ -45,6 +45,7 @@ public class OtherFrame extends JFrame
 	     win.mainp = new MainPanel(win);
 	     win.nemo = new Nemonemo(win);
 	     win.nemo1 = new Nemonemo1(win);
+	     win.nemo15 = new Nemonemo15(win);
 	     win.setBackground(Color.white);
 	     win.add(win.mainp);
 	     win.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -88,39 +89,7 @@ public class OtherFrame extends JFrame
 		menuBar.add(helpMenu);
 		return menuBar;
 	}
-
-	public void showLocation(int mouseX, int mouseY) //마우스 커서의위치를 표시
-	{
-		if(mouseX!=this.mouseX) //마우스 커서가 위치한 열이 변한 경우
-		{
-			this.mouseX = mouseX;
-			col.repaint();
-		}
-		if(mouseY!=this.mouseY) //마우스 커서가 위치한 행이 변한 경우
-		{
-			this.mouseY = mouseY;
-			row.repaint();
-		}
-	}
-	
-	public void display() //퍼즐이 풀렸는지 여부를 검사
-	{
-		boolean endFlag = true;
-		for(int j=0; (j<10)&&endFlag; j++)
-			for(int i=0; (i<10)&&endFlag; i++)
-			{
-				if((data.charAt(j*10+i)=='1')&&(temp[j*10+i]!=1))
-					endFlag=false; //채워야 할 칸을 모두채웠는지 검사
-				else if((data.charAt(j*10+i)!='1')&&(temp[j*10+i]==1))
-					endFlag=false; //채우지 않아야 할 칸을채웠는지 검사
-			}
-		if(endFlag)
-		{
-			this.endFlag = endFlag;
-			board.repaint(); //퍼즐이 다 풀렸으면 보드의 칸을 채움
-		}
-	}
-	
+		
 	public void actionPerformed(ActionEvent e) //선택한 메뉴에 따라실행할 루틴을 호출
 	{
 		String cmd = e.getActionCommand();
@@ -197,6 +166,7 @@ public class OtherFrame extends JFrame
 	    public MainPanel mainp = null;
 	    public Nemonemo nemo = null;
 	    public Nemonemo1 nemo1 = null;
+	    public Nemonemo15 nemo15 = null;
 	 
 	    public void change(String panelName) { // 패널 1번과 2번 변경 후 재설정
 	 
@@ -212,9 +182,15 @@ public class OtherFrame extends JFrame
 	            revalidate();
 	            repaint();
 	        }
-	        else {
+	        else if(panelName.equals("nemo1")) {
 	        	getContentPane().removeAll();
 	            getContentPane().add(nemo1);
+	            revalidate();
+	            repaint();
+	        }
+	        else {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo15);
 	            revalidate();
 	            repaint();
 	        }

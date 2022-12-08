@@ -67,6 +67,14 @@ public class MainBoard extends Canvas //Canvas 클래스를 상속
 			offG.setColor(Color.red);
 			offG.fillRect(90,30,60,60);
 		}
+		if(nemo1.getendFlag()) {
+			offG.setColor(Color.darkGray);
+			offG.fillRect(30, 90, 60, 60);
+		}
+		else {
+			offG.setColor(Color.gray);
+			offG.fillRect(30,90,60,60);
+		}
 		
 		g.drawImage(offScr, 0, 0, null); //가상 화면을 실제 화면으로 복사
 	}
@@ -117,6 +125,9 @@ public class MainBoard extends Canvas //Canvas 클래스를 상속
 			}
 			if((x>89 && x<151) && (y>29 && y<91)) {
 				parent.win.change("nemo1");
+			}
+			if((x>29 && x<91) && (y>91 && y<151)) {
+				parent.win.change("nemo15");
 			}
 		}
 	}
