@@ -17,6 +17,14 @@ public class MainBoard extends Canvas //Canvas 클래스를 상속
 	OtherFrame.JPanelTest win;
 	Nemonemo nemo;
 	Nemonemo1 nemo1;
+	Nemonemo2 nemo2;
+	Nemonemo3 nemo3;
+	Nemonemo4 nemo4;
+	Nemonemo5 nemo5;
+	Nemonemo6 nemo6;
+	Nemonemo7 nemo7;
+	Nemonemo8 nemo8;
+	
 	boolean drag = false; //마우스 드래그 상태인지 여부
 	int startX, startY; //마우스 드래그를 시작한 좌표
 	int endX, endY; //마우스 드래그를 끝마친 좌표
@@ -29,15 +37,19 @@ public class MainBoard extends Canvas //Canvas 클래스를 상속
 		this.parent = mainp; //Nemonemo 클래스의 객체를 보관
 		nemo = new Nemonemo(win);
 		nemo1 = new Nemonemo1(win);
+		nemo2 = new Nemonemo2(win);
+		nemo3 = new Nemonemo3(win);
+		nemo4 = new Nemonemo4(win);
+		nemo5 = new Nemonemo5(win);
+		nemo6 = new Nemonemo6(win);
+		nemo7 = new Nemonemo7(win);
+		nemo8 = new Nemonemo8(win);
+		
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
 		this.addMouseMotionListener(this);
-		
-		
+
 	}
-	
 
-
-	
 	public void initBufferd() {
 		dim = getSize();
 		setBackground(Color.white);
@@ -53,27 +65,83 @@ public class MainBoard extends Canvas //Canvas 클래스를 상속
 		offG.drawString("10X10", 85,20);
 		if(nemo.getendFlag()) {
 			offG.setColor(Color.black);
-			offG.fillRect(30, 30, 60, 60);
+			offG.fillRect(10, 30, 60, 60);
 		}
 		else {
 			offG.setColor(Color.blue);
-			offG.fillRect(30,30,60,60);
+			offG.fillRect(10,30,60,60);
 		}
+		
 		if(nemo1.getendFlag()) {
 			offG.setColor(Color.green);
-			offG.fillRect(90, 30, 60, 60);
+			offG.fillRect(70, 30, 60, 60);
 		}
 		else {
 			offG.setColor(Color.red);
-			offG.fillRect(90,30,60,60);
+			offG.fillRect(70,30,60,60);
 		}
-		if(nemo1.getendFlag()) {
-			offG.setColor(Color.darkGray);
-			offG.fillRect(30, 90, 60, 60);
+		
+		if(nemo2.getendFlag()) {
+			offG.setColor(Color.yellow);
+			offG.fillRect(130, 30, 60, 60);
+		}
+		else {
+			offG.setColor(Color.orange);
+			offG.fillRect(130,30,60,60);
+		}
+		
+		if(nemo3.getendFlag()) {
+			offG.setColor(Color.pink);
+			offG.fillRect(10, 90, 60, 60);
 		}
 		else {
 			offG.setColor(Color.gray);
-			offG.fillRect(30,90,60,60);
+			offG.fillRect(10,90,60,60);
+		}
+		
+		if(nemo4.getendFlag()) {
+			offG.setColor(Color.cyan);
+			offG.fillRect(70, 30, 60, 60);
+		}
+		else {
+			offG.setColor(Color.black);
+			offG.fillRect(70,90,60,60);
+		}
+		
+		if(nemo5.getendFlag()) {
+			offG.setColor(Color.red);
+			offG.fillRect(130, 30, 60, 60);
+		}
+		else {
+			offG.setColor(Color.cyan);
+			offG.fillRect(130,90,60,60);
+		}
+		
+		if(nemo6.getendFlag()) {
+			offG.setColor(Color.blue);
+			offG.fillRect(10, 150, 60, 60);
+		}
+		else {
+			offG.setColor(Color.yellow);
+			offG.fillRect(10,150,60,60);
+		}
+		
+		if(nemo6.getendFlag()) {
+			offG.setColor(Color.gray);
+			offG.fillRect(70, 150, 60, 60);
+		}
+		else {
+			offG.setColor(Color.green);
+			offG.fillRect(70, 150, 60, 60);
+		}
+		
+		if(nemo6.getendFlag()) {
+			offG.setColor(Color.orange);
+			offG.fillRect(130, 150, 60, 60);
+		}
+		else {
+			offG.setColor(Color.pink);
+			offG.fillRect(130, 150, 60, 60);
 		}
 		
 		g.drawImage(offScr, 0, 0, null); //가상 화면을 실제 화면으로 복사
@@ -126,8 +194,26 @@ public class MainBoard extends Canvas //Canvas 클래스를 상속
 			if((x>89 && x<151) && (y>29 && y<91)) {
 				parent.win.change("nemo1");
 			}
-			if((x>29 && x<91) && (y>91 && y<151)) {
-				parent.win.change("nemo15");
+			if((x>149 && x<211) && (y>29 && y<91)) {
+				parent.win.change("nemo2");
+			}
+			if((x>29 && x<91) && (y>89 && y<151)) {
+				parent.win.change("nemo3");
+			}
+			if((x>89 && x<151) && (y>89 && y<151)) {
+				parent.win.change("nemo4");
+			}
+			if((x>149 && x<211) && (y>89 && y<151)) {
+				parent.win.change("nemo5");
+			}
+			if((x>29 && x<91) && (y>159 && y<211)) {
+				parent.win.change("nemo6");
+			}
+			if((x>89 && x<151) && (y>159 && y<211)) {
+				parent.win.change("nemo7");
+			}
+			if((x>149 && x<211) && (y>159 && y<211)) {
+				parent.win.change("nemo8");
 			}
 		}
 	}

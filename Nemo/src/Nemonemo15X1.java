@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class Nemonemo15 extends AbNemo
+public class Nemonemo15X1 extends AbNemo
 	{
 		OtherFrame other;
 		JPanel nemo;
@@ -15,15 +15,15 @@ public class Nemonemo15 extends AbNemo
 		
 		int heart = 4;
 		PhoneBoard board;
-		Column2 col;
-		Row2 row;
+		Column15X1 col;
+		Row15X1 row;
 		//부착(add)할 클래스의 선언
 		
 		String data = "000010000000000000010000000000000010000000000000010000000000000010000000000000010011111110111110111111111100010110000011111110001000100101010011111110111110111000111101010110111011111110110111011101010111000111111110111111111"; //문제의 정답(전화기)
 
 		public static boolean endFlag = false; //퍼즐이 풀렸는지 여부
 		
-		public Nemonemo15(OtherFrame.JPanelTest win)
+		public Nemonemo15X1(OtherFrame.JPanelTest win)
 		{
 			setLayout(null);
 			this.win = win;
@@ -42,14 +42,14 @@ public class Nemonemo15 extends AbNemo
 			nemo.setLayout(null); //null 레이아웃으로 설정
 			
 			//column 생성
-			col = new Column2(this);
+			col = new Column15X1(this);
 			this.add(col);
 			col.setFont(new Font("SansSerif", Font.BOLD, 14));
 			col.setBounds(120, 0, 900, 120);
 			col.repaint();
 				
 			//row 생성
-			row = new Row2(this);
+			row = new Row15X1(this);
 			this.add(row);
 			row.setFont(new Font("SansSerif", Font.BOLD, 14));
 			row.setBounds(0, 120, 120, 900);
@@ -101,13 +101,13 @@ public class Nemonemo15 extends AbNemo
 				}
 			if(endFlag)
 			{
-				Nemonemo15.endFlag = endFlag;
+				Nemonemo15X1.endFlag = endFlag;
 				board.repaint(); //퍼즐이 다 풀렸으면 보드의 칸을 채움
 			}
 		}
 		
 		public boolean getendFlag() {
-			return Nemonemo15.endFlag;
+			return Nemonemo15X1.endFlag;
 		}
 		
 		public void actionPerformed(ActionEvent e) //선택한 메뉴에 따라실행할 루틴을 호출

@@ -11,6 +11,13 @@ public class OtherFrame extends JFrame
 	JPanel contentPane;
 	Nemonemo  nemo;
 	Nemonemo1  nemo1;
+	Nemonemo2  nemo2;
+	Nemonemo3  nemo3;
+	Nemonemo4  nemo4;
+	Nemonemo5  nemo5;
+	Nemonemo6  nemo6;
+	Nemonemo7  nemo7;
+	Nemonemo8  nemo8;
 	//메뉴
 	JMenuBar menuBar = new JMenuBar();
 	JMenu gameMenu = new JMenu("Game");
@@ -45,7 +52,14 @@ public class OtherFrame extends JFrame
 	     win.mainp = new MainPanel(win);
 	     win.nemo = new Nemonemo(win);
 	     win.nemo1 = new Nemonemo1(win);
-	     win.nemo15 = new Nemonemo15(win);
+	     win.nemo2 = new Nemonemo2(win);
+	     win.nemo3 = new Nemonemo3(win);
+	     win.nemo4 = new Nemonemo4(win);
+	     win.nemo5 = new Nemonemo5(win);
+	     win.nemo6 = new Nemonemo6(win);
+	     win.nemo7 = new Nemonemo7(win);
+	     win.nemo8 = new Nemonemo8(win);
+	     win.nemo15 = new Nemonemo15X1(win);
 	     win.setBackground(Color.white);
 	     win.add(win.mainp);
 	     win.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -166,7 +180,14 @@ public class OtherFrame extends JFrame
 	    public MainPanel mainp = null;
 	    public Nemonemo nemo = null;
 	    public Nemonemo1 nemo1 = null;
-	    public Nemonemo15 nemo15 = null;
+	    public Nemonemo2 nemo2 = null;
+	    public Nemonemo3 nemo3 = null;
+	    public Nemonemo4 nemo4 = null;
+	    public Nemonemo5 nemo5 = null;
+	    public Nemonemo6 nemo6 = null;
+	    public Nemonemo7 nemo7 = null;
+	    public Nemonemo8 nemo8 = null;
+	    public Nemonemo15X1 nemo15 = null;
 	 
 	    public void change(String panelName) { // 패널 1번과 2번 변경 후 재설정
 	 
@@ -188,6 +209,48 @@ public class OtherFrame extends JFrame
 	            revalidate();
 	            repaint();
 	        }
+	        else if(panelName.equals("nemo2")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo2);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo3")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo3);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo4")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo4);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo5")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo5);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo6")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo6);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo7")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo7);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo8")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo8);
+	            revalidate();
+	            repaint();
+	        }
 	        else {
 	        	getContentPane().removeAll();
 	            getContentPane().add(nemo15);
@@ -195,6 +258,7 @@ public class OtherFrame extends JFrame
 	            repaint();
 	        }
 	    }
+	    
 	 
 	}
 }
