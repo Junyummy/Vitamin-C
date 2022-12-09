@@ -13,7 +13,7 @@ public class Nemonemo2 extends AbNemo{
 	JPanel nemo1;
 	
 	int heart = 4;
-	Dog1Board board;
+	Dog2Board board;
 	Column2 col;
 	Row2 row;
 	
@@ -43,20 +43,20 @@ public class Nemonemo2 extends AbNemo{
 		col = new Column2(this);
 		this.add(col);
 		col.setFont(new Font("SansSerif", Font.BOLD, 14));
-		col.setBounds(120, 0, 201, 120);
+		col.setBounds(120, 0, 900, 120);
 		col.repaint();
 			
 		//row 생성
 		row = new Row2(this);
 		this.add(row);
 		row.setFont(new Font("SansSerif", Font.BOLD, 14));
-		row.setBounds(0, 120, 120, 201);
+		row.setBounds(0, 120, 120, 900);
 			
 		//board 생성
-		board = new Dog1Board(this);
+		board = new Dog2Board(this);
 		this.add(board);
 		board.setFont(new Font("SansSerif", Font.BOLD, 14));
-		board.setBounds(120, 120, 201, 201);
+		board.setBounds(120, 120, 900, 900);
 		
 		JButton btn = new JButton("버튼");
         btn.setSize(70, 20);

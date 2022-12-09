@@ -42,20 +42,20 @@ public class Nemonemo4 extends AbNemo{
 		col = new Column4(this);
 		this.add(col);
 		col.setFont(new Font("SansSerif", Font.BOLD, 14));
-		col.setBounds(120, 0, 201, 120);
+		col.setBounds(120, 0, 900, 120);
 		col.repaint();
 			
 		//row 생성
 		row = new Row4(this);
 		this.add(row);
 		row.setFont(new Font("SansSerif", Font.BOLD, 14));
-		row.setBounds(0, 120, 120, 201);
+		row.setBounds(0, 120, 120, 900);
 			
 		//board 생성
 		board = new Dog4Board(this);
 		this.add(board);
 		board.setFont(new Font("SansSerif", Font.BOLD, 14));
-		board.setBounds(120, 120, 201, 201);
+		board.setBounds(120, 120, 900, 900);
 		
 		JButton btn = new JButton("버튼");
         btn.setSize(70, 20);
@@ -100,7 +100,7 @@ public class Nemonemo4 extends AbNemo{
 			}
 		if(endFlag)
 		{
-			Nemonemo2.endFlag = endFlag;
+			Nemonemo4.endFlag = endFlag;
 			board.repaint(); //퍼즐이 다 풀렸으면 보드의 칸을 채움
 		}
 	}

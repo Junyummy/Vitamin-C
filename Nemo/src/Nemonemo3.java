@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+
 public class Nemonemo3 extends AbNemo{
 
 	OtherFrame other;
@@ -16,7 +17,7 @@ public class Nemonemo3 extends AbNemo{
 	Column3 col;
 	Row3 row;
 	
-	String data = "0011111100011111111011111111111111001111111011011111101101111111001111111111111101111111100011111100"; //문제의 정답(초기답: lp판)
+	String data = "1001000000011100001101010000101111111110111111111000011111100001111100000100010000010001000011001100"; //문제의 정답(초기답:1강아지)
 	
 	public static boolean endFlag = false; //퍼즐이 풀렸는지 여부
 	
@@ -42,20 +43,20 @@ public class Nemonemo3 extends AbNemo{
 		col = new Column3(this);
 		this.add(col);
 		col.setFont(new Font("SansSerif", Font.BOLD, 14));
-		col.setBounds(120, 0, 201, 120);
+		col.setBounds(120, 0, 900, 120);
 		col.repaint();
 			
 		//row 생성
 		row = new Row3(this);
 		this.add(row);
 		row.setFont(new Font("SansSerif", Font.BOLD, 14));
-		row.setBounds(0, 120, 120, 201);
+		row.setBounds(0, 120, 120, 900);
 			
 		//board 생성
 		board = new Dog3BoardrrrrrrrrrrrrrLPPAN(this);
 		this.add(board);
 		board.setFont(new Font("SansSerif", Font.BOLD, 14));
-		board.setBounds(120, 120, 201, 201);
+		board.setBounds(120, 120, 900, 900);
 		
 		JButton btn = new JButton("버튼");
         btn.setSize(70, 20);
@@ -100,7 +101,7 @@ public class Nemonemo3 extends AbNemo{
 			}
 		if(endFlag)
 		{
-			Nemonemo2.endFlag = endFlag;
+			Nemonemo3.endFlag = endFlag;
 			board.repaint(); //퍼즐이 다 풀렸으면 보드의 칸을 채움
 		}
 	}
