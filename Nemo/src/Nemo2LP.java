@@ -5,10 +5,10 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class Dog1Board extends Canvas //Canvas 클래스를 상속
+public class Nemo2LP extends Canvas //Canvas 클래스를 상속
 	implements MouseListener, MouseMotionListener
 {	
-	Nemonemo1 parent; //Nemonemo 클래스의 객체를 저장
+	Nemonemo3 parent; //Nemonemo 클래스의 객체를 저장
 	boolean drag = false; //마우스 드래그 상태인지 여부
 	int startX, startY; //마우스 드래그를 시작한 좌표
 	int endX, endY; //마우스 드래그를 끝마친 좌표
@@ -26,7 +26,7 @@ public class Dog1Board extends Canvas //Canvas 클래스를 상속
 	Image offScr; //더블버퍼링을 위한 가상 화면
 	Graphics offG;
 	
-	public Dog1Board(Nemonemo1 nemo) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
+	public Nemo2LP(Nemonemo3 nemo) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
 	{
 		this.parent = nemo; //Nemonemo 클래스의 객체를 보관
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언

@@ -13,11 +13,11 @@ public class Nemonemo2 extends AbNemo{
 	JPanel nemo1;
 	
 	int heart = 4;
-	Dog2Board board;
+	Nemo2Deer board;
 	Column2 col;
 	Row2 row;
 	
-	String data = "1001000000011100001101010000101111111110111111111000011111100001111100000100010000010001000011001100"; //문제의 정답(초기답:1강아지)
+	String data = "0110000110011100111000111111001111101000100111100011111110000111111000000011110000011111100011111110"; // 사슴
 	
 	public static boolean endFlag = false; //퍼즐이 풀렸는지 여부
 	
@@ -53,7 +53,7 @@ public class Nemonemo2 extends AbNemo{
 		row.setBounds(0, 120, 120, 900);
 			
 		//board 생성
-		board = new Dog2Board(this);
+		board = new Nemo2Deer(this);
 		this.add(board);
 		board.setFont(new Font("SansSerif", Font.BOLD, 14));
 		board.setBounds(120, 120, 900, 900);
