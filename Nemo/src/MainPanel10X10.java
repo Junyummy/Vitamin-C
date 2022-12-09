@@ -10,14 +10,14 @@ import javax.swing.JPanel;
 import javazoom.jl.player.Player;
 
 
-public class MainPanel extends JPanel
+public class MainPanel10X10 extends JPanel
 	{	
 		OtherFrame.JPanelTest win;
 		JPanel Mainp;
 		
-		MainBoard board1;
+		MainBoard10X10 board1;
 		
-		public MainPanel(OtherFrame.JPanelTest win){
+		public MainPanel10X10(OtherFrame.JPanelTest win){
 			setLayout(null);
 			this.win = win;
 
@@ -25,7 +25,7 @@ public class MainPanel extends JPanel
 			Mainp.setLayout(null); //null 레이아웃으로 설정			
 			
 			//board 생성
-			board1 = new MainBoard(this);
+			board1 = new MainBoard10X10(this);
 			this.add(board1);
 			board1.setFont(new Font("SansSerif", Font.BOLD, 14));
 			board1.setBounds(120, 120, 201, 201);

@@ -10,10 +10,10 @@ import javax.sound.sampled.Clip;
 import javazoom.jl.player.Player;
 
 
-public class MainBoard extends Canvas //Canvas 클래스를 상속
+public class MainBoard10X10 extends Canvas //Canvas 클래스를 상속
 	implements MouseListener, MouseMotionListener
 {	
-	MainPanel parent; //Nemonemo 클래스의 객체를 저장
+	MainPanel10X10 parent; //Nemonemo 클래스의 객체를 저장
 	OtherFrame.JPanelTest win;
 	Nemonemo nemo;
 	Nemonemo1 nemo1;
@@ -32,7 +32,7 @@ public class MainBoard extends Canvas //Canvas 클래스를 상속
 	Image offScr; //더블버퍼링을 위한 가상 화면
 	Graphics offG;
 	
-	public MainBoard(MainPanel mainp) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
+	public MainBoard10X10(MainPanel10X10 mainp) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
 	{
 		this.parent = mainp; //Nemonemo 클래스의 객체를 보관
 		nemo = new Nemonemo(win);
@@ -147,7 +147,7 @@ public class MainBoard extends Canvas //Canvas 클래스를 상속
 		g.drawImage(offScr, 0, 0, null); //가상 화면을 실제 화면으로 복사
 	}
 	
-	public MainBoard(ActionListener actionListener) {
+	public MainBoard10X10(ActionListener actionListener) {
 		// TODO Auto-generated constructor stub
 	}
 

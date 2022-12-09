@@ -25,7 +25,7 @@ public class OtherFrame extends JFrame
 	
 	//부착(add)할 클래스의 선언
 	DogBoard board;
-	MainBoard board1;
+	MainBoard10X10 board1;
 	Column col;
 	Row row;
 	
@@ -35,7 +35,7 @@ public class OtherFrame extends JFrame
 		 JPanelTest win = new JPanelTest();
 		 win.setJMenuBar(createMenuBar());
 	     win.setTitle("frame test");
-	     win.mainp = new MainPanel(win);
+	     win.mainp = new MainPanel10X10(win);
 	     win.nemo = new Nemonemo(win);
 	     win.nemo1 = new Nemonemo1(win);
 	     win.nemo2 = new Nemonemo2(win);
@@ -105,7 +105,7 @@ public class OtherFrame extends JFrame
 
 	public class JPanelTest extends JFrame {
 		 
-	    public MainPanel mainp = null;
+	    public MainPanel10X10 mainp = null;
 	    public Nemonemo nemo = null;
 	    public Nemonemo1 nemo1 = null;
 	    public Nemonemo2 nemo2 = null;
