@@ -14,7 +14,7 @@ public class Nemonemo extends AbNemo
 		//메뉴
 		
 		int heart = 4;
-		DogBoard board;
+		Nemo2Dog board;
 		Column col;
 		Row row;
 		//부착(add)할 클래스의 선언
@@ -55,7 +55,7 @@ public class Nemonemo extends AbNemo
 			row.setBounds(0, 120, 120, 900);
 				
 			//board 생성
-			board = new DogBoard(this);
+			board = new Nemo2Dog(this);
 			this.add(board);
 			board.setFont(new Font("SansSerif", Font.BOLD, 14));
 			board.setBounds(120, 120, 900, 900);

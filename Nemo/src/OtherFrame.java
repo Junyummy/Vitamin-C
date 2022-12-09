@@ -24,7 +24,7 @@ public class OtherFrame extends JFrame
 	JMenu helpMenu = new JMenu("Help");
 	
 	//부착(add)할 클래스의 선언
-	DogBoard board;
+	Nemo2Dog board;
 	MainBoard10X10 board1;
 	Column col;
 	Row row;

@@ -12,11 +12,11 @@ public class Nemonemo8 extends AbNemo{
 	JPanel nemo8;
 	
 	int heart = 4;
-	Dog8Board board;
+	Nemo2Candle board;
 	Column8 col;
 	Row8 row;
 	
-	String data = "0011111100011111111011111111111111001111111011011111101101111111001111111111111101111111100011111100"; //문제의 정답(초기답: lp판)
+	String data = "0001000000001010000000101000000001000000001110011100111011010011101001001110101110111010001111111000"; //촛불
 	
 	public static boolean endFlag = false; //퍼즐이 풀렸는지 여부
 	
@@ -52,7 +52,7 @@ public class Nemonemo8 extends AbNemo{
 		row.setBounds(0, 120, 120, 900);
 			
 		//board 생성
-		board = new Dog8Board(this);
+		board = new Nemo2Candle(this);
 		this.add(board);
 		board.setFont(new Font("SansSerif", Font.BOLD, 14));
 		board.setBounds(120, 120, 900, 900);
