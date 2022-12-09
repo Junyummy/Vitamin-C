@@ -21,5 +21,4 @@ public abstract class AbNemo extends JPanel{
 	
 	public abstract void showLocation(int mouseX, int mouseY);//마우스 커서의위치를 표시
 	public abstract void display();
-	public abstract void actionPerformed(ActionEvent e); //선택한 메뉴에 따라실행할 루틴을 호출
 }

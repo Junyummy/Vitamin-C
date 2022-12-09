@@ -108,30 +108,4 @@ public class Nemonemo7 extends AbNemo{
 	public boolean getendFlag() {
 		return Nemonemo2.endFlag;
 	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		String cmd = e.getActionCommand();
-		
-		if(cmd.equals("newGame")) {
-			//네모네모로직 데이터를 불러와 새 게임을 시작
-			//showOpenDialog();
-		}
-			
-		else if(cmd.equals("answerGame")) //Answer를 선택하면정답을 출력
-		{
-			Nemonemo2.endFlag = true;
-			board.repaint();
-		}
-		else if(cmd.equals("exitGame")) //게임 종료
-		{
-			System.exit(0);
-		}
-		else if(cmd.equals("aboutGame")) {
-			//애플리케이션 정보를 출력
-			//showAboutDialog();
-		}
-	}
-
 }
