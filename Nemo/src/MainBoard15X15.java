@@ -15,15 +15,15 @@ public class MainBoard15X15 extends Canvas
 {	
 	MainPanel15X15 parent; //Nemonemo 클래스의 객체를 저장
 	OtherFrame.JPanelTest win;
-	Nemonemo nemo;
-	Nemonemo1 nemo1;
-	Nemonemo2 nemo2;
-	Nemonemo3 nemo3;
-	Nemonemo4 nemo4;
-	Nemonemo5 nemo5;
-	Nemonemo6 nemo6;
-	Nemonemo7 nemo7;
-	Nemonemo8 nemo8;
+	Nemonemo15X1 nemo15X1;
+	Nemonemo15X2 nemo15X2;
+	Nemonemo15X3 nemo15X3;
+	Nemonemo15X4 nemo15X4;
+	Nemonemo15X5 nemo15X5;
+	Nemonemo15X6 nemo15X6;
+	Nemonemo15X7 nemo15X7;
+	Nemonemo15X8 nemo15X8;
+	Nemonemo15X9 nemo15X9;
 
 	
 	boolean drag = false; //마우스 드래그 상태인지 여부
@@ -37,15 +37,15 @@ public class MainBoard15X15 extends Canvas
 	public MainBoard15X15(MainPanel15X15 mainp2) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
 	{
 		this.parent = mainp2; //Nemonemo 클래스의 객체를 보관
-		nemo = new Nemonemo(win);
-		nemo1 = new Nemonemo1(win);
-		nemo2 = new Nemonemo2(win);
-		nemo3 = new Nemonemo3(win);
-		nemo4 = new Nemonemo4(win);
-		nemo5 = new Nemonemo5(win);
-		nemo6 = new Nemonemo6(win);
-		nemo7 = new Nemonemo7(win);
-		nemo8 = new Nemonemo8(win);
+		nemo15X1 = new Nemonemo15X1(win);
+		nemo15X2 = new Nemonemo15X2(win);
+		nemo15X3 = new Nemonemo15X3(win);
+		nemo15X4 = new Nemonemo15X4(win);
+		nemo15X5 = new Nemonemo15X5(win);
+		nemo15X6 = new Nemonemo15X6(win);
+		nemo15X7 = new Nemonemo15X7(win);
+		nemo15X8 = new Nemonemo15X8(win);
+		nemo15X9 = new Nemonemo15X9(win);
 		
 	
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
@@ -77,7 +77,7 @@ public class MainBoard15X15 extends Canvas
 		offG.setFont(new Font("SansSerif", Font.BOLD, 14));
 		offG.drawString("15X15", 85,20);
 	
-		if(nemo.getendFlag()) {
+		if(nemo15X1.getendFlag()) {
 			offG.setColor(Color.black);
 			offG.fillRect(10, 30, 60, 60);
 		}
@@ -87,7 +87,7 @@ public class MainBoard15X15 extends Canvas
 			offG.fillRect(10,30,60,60);
 		}
 	
-		if(nemo1.getendFlag()) {
+		if(nemo15X2.getendFlag()) {
 			offG.setColor(Color.green);
 			offG.fillRect(70, 30, 60, 60);
 		}
@@ -96,7 +96,7 @@ public class MainBoard15X15 extends Canvas
 			offG.fillRect(70,30,60,60);
 		}
 	
-		if(nemo2.getendFlag()) {
+		if(nemo15X3.getendFlag()) {
 			offG.setColor(Color.yellow);
 			offG.fillRect(130, 30, 60, 60);
 		}
@@ -105,7 +105,7 @@ public class MainBoard15X15 extends Canvas
 			offG.fillRect(130,30,60,60);
 		}	
 	
-		if(nemo3.getendFlag()) {
+		if(nemo15X4.getendFlag()) {
 		offG.setColor(Color.pink);
 		offG.fillRect(10, 90, 60, 60);
 	}
@@ -114,7 +114,7 @@ public class MainBoard15X15 extends Canvas
 		offG.fillRect(10,90,60,60);
 	}
 	
-	if(nemo4.getendFlag()) {
+	if(nemo15X5.getendFlag()) {
 		offG.setColor(Color.cyan);
 		offG.fillRect(70, 30, 60, 60);
 	}
@@ -123,7 +123,7 @@ public class MainBoard15X15 extends Canvas
 		offG.fillRect(70,90,60,60);
 	}
 	
-	if(nemo5.getendFlag()) {
+	if(nemo15X6.getendFlag()) {
 		offG.setColor(Color.red);
 		offG.fillRect(130, 30, 60, 60);
 	}
@@ -132,7 +132,7 @@ public class MainBoard15X15 extends Canvas
 		offG.fillRect(130,90,60,60);
 	}
 	
-	if(nemo6.getendFlag()) {
+	if(nemo15X7.getendFlag()) {
 		offG.setColor(Color.blue);
 		offG.fillRect(10, 150, 60, 60);
 	}
@@ -141,7 +141,7 @@ public class MainBoard15X15 extends Canvas
 		offG.fillRect(10,150,60,60);
 	}
 	
-	if(nemo6.getendFlag()) {
+	if(nemo15X8.getendFlag()) {
 		offG.setColor(Color.gray);
 		offG.fillRect(70, 150, 60, 60);
 	}
@@ -150,7 +150,7 @@ public class MainBoard15X15 extends Canvas
 		offG.fillRect(70, 150, 60, 60);
 	}
 	
-	if(nemo6.getendFlag()) {
+	if(nemo15X9.getendFlag()) {
 		offG.setColor(Color.orange);
 		offG.fillRect(130, 150, 60, 60);
 	}
@@ -205,31 +205,31 @@ public void mouseReleased(MouseEvent e) {
 	else //마우스 왼쪽 버튼 
 	{
 		if((x>29 && x<91) && (y>29 && y<91)) {
-			parent.win.change("nemo");
+			parent.win.change("nemo15X1");
 		}
 		if((x>89 && x<151) && (y>29 && y<91)) {
-			parent.win.change("nemo1");
+			parent.win.change("nemo15X2");
 		}
 		if((x>149 && x<211) && (y>29 && y<91)) {
-			parent.win.change("nemo2");
+			parent.win.change("nemo15X3");
 		}
 		if((x>29 && x<91) && (y>89 && y<151)) {
-			parent.win.change("nemo3");
+			parent.win.change("nemo15X4");
 		}
 		if((x>89 && x<151) && (y>89 && y<151)) {
-			parent.win.change("nemo4");
+			parent.win.change("nemo15X5");
 		}
 		if((x>149 && x<211) && (y>89 && y<151)) {
-			parent.win.change("nemo5");
+			parent.win.change("nemo15X6");
 		}
 		if((x>29 && x<91) && (y>159 && y<211)) {
-			parent.win.change("nemo6");
+			parent.win.change("nemo15X7");
 		}
 		if((x>89 && x<151) && (y>159 && y<211)) {
-			parent.win.change("nemo7");
+			parent.win.change("nemo15X8");
 		}
 		if((x>149 && x<211) && (y>159 && y<211)) {
-			parent.win.change("nemo8");
+			parent.win.change("nemo15X9");
 		}
 		if((x>399 && x<441) && (y>399 && y<441)) {
 			parent.win.change("mainp");

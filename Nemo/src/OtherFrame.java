@@ -17,6 +17,16 @@ public class OtherFrame extends JFrame
 	Nemonemo6  nemo6;
 	Nemonemo7  nemo7;
 	Nemonemo8  nemo8;
+	
+	Nemonemo15X1  nemo15X1;
+	Nemonemo15X2  nemo15X2;
+	Nemonemo15X3  nemo15X3;
+	Nemonemo15X4  nemo15X4;
+	Nemonemo15X5  nemo15X5;
+	Nemonemo15X6  nemo15X6;
+	Nemonemo15X7  nemo15X7;
+	Nemonemo15X8  nemo15X8;
+	Nemonemo15X9  nemo15X9;
 
 	//메뉴
 	JMenuBar menuBar = new JMenuBar();
@@ -46,7 +56,16 @@ public class OtherFrame extends JFrame
 	     win.nemo6 = new Nemonemo6(win);
 	     win.nemo7 = new Nemonemo7(win);
 	     win.nemo8 = new Nemonemo8(win);
-	     win.nemo15 = new Nemonemo15X1(win);
+	     win.nemo15X1 = new Nemonemo15X1(win);
+	     win.nemo15X2 = new Nemonemo15X2(win);
+	     win.nemo15X3 = new Nemonemo15X3(win);
+	     win.nemo15X4 = new Nemonemo15X4(win);
+	     win.nemo15X5 = new Nemonemo15X5(win);
+	     win.nemo15X6 = new Nemonemo15X6(win);
+	     win.nemo15X7 = new Nemonemo15X7(win);
+	     win.nemo15X8 = new Nemonemo15X8(win);
+	     win.nemo15X9 = new Nemonemo15X9(win);
+	     
 	     win.setBackground(Color.white);
 	     win.add(win.mainp);
 	     win.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -54,8 +73,6 @@ public class OtherFrame extends JFrame
 	     win.setVisible(true);
 	     win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	     
-
-	
 	}
 		
 	private JMenuBar createMenuBar()
@@ -108,7 +125,7 @@ public class OtherFrame extends JFrame
 
 	public class JPanelTest extends JFrame {
 		 
-	    public MainPanel15X15 mainp2;
+		public MainPanel15X15 mainp2;
 		public MainPanel10X10 mainp = null;
 	    public Nemonemo nemo = null;
 	    public Nemonemo1 nemo1 = null;
@@ -119,7 +136,15 @@ public class OtherFrame extends JFrame
 	    public Nemonemo6 nemo6 = null;
 	    public Nemonemo7 nemo7 = null;
 	    public Nemonemo8 nemo8 = null;
-	    public Nemonemo15X1 nemo15 = null;
+	    public Nemonemo15X1 nemo15X1 = null;
+	    public Nemonemo15X2 nemo15X2 = null;
+	    public Nemonemo15X3 nemo15X3 = null;
+	    public Nemonemo15X4 nemo15X4 = null;
+	    public Nemonemo15X5 nemo15X5 = null;
+	    public Nemonemo15X6 nemo15X6 = null;
+	    public Nemonemo15X7 nemo15X7 = null;
+	    public Nemonemo15X8 nemo15X8 = null;
+	    public Nemonemo15X9 nemo15X9 = null;
 	 
 	    public void change(String panelName) { // 패널 1번과 2번 변경 후 재설정
 	 
@@ -189,9 +214,57 @@ public class OtherFrame extends JFrame
 	            revalidate();
 	            repaint();
 	        }
-	        else {
+	        else if(panelName.equals("nemo15X1")) {
 	        	getContentPane().removeAll();
-	            getContentPane().add(nemo15);
+	            getContentPane().add(nemo15X1);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo15X2")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo15X2);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo15X3")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo15X3);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo15X4")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo15X4);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo15X5")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo15X5);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo15X6")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo15X6);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo15X7")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo15X7);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo15X8")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo15X8);
+	            revalidate();
+	            repaint();
+	        }
+	        else if(panelName.equals("nemo15X9")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(nemo15X9);
 	            revalidate();
 	            repaint();
 	        }
