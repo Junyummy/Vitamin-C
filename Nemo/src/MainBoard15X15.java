@@ -50,18 +50,8 @@ public class MainBoard15X15 extends Canvas
 	
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
 		this.addMouseMotionListener(this);
-
 	}
 
-	private void addMouseMotionListener(MainBoard15X15 mainBoard15X15) {
-	// TODO Auto-generated method stub
-	
-	}
-
-	private void addMouseListener(MainBoard15X15 mainBoard15X15) {
-	// TODO Auto-generated method stub
-	
-	}
 
 	public void initBufferd() {
 		dim = getSize();

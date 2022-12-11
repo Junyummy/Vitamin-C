@@ -68,7 +68,7 @@ public class Nemonemo15X8 extends AbNemo
 	class MyActionListener implements ActionListener { // 버튼 키 눌리면 패널 1번 호출
         @Override
         public void actionPerformed(ActionEvent e) {
-            win.change("mainp");
+            win.change("mainp2");
         }
     }
 		
