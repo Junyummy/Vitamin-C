@@ -3,7 +3,9 @@ import java.awt.event.*;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
@@ -24,6 +26,17 @@ public class MainBoard10X10 extends Canvas //Canvas 클래스를 상속
 	Nemonemo6 nemo6;
 	Nemonemo7 nemo7;
 	Nemonemo8 nemo8;
+	
+	Image mark;
+	Image candle;
+	Image coffee;
+	Image lp판;
+	Image deer;
+	Image dog;
+	Image kettle;
+	Image kid;
+	Image cissors;
+	Image snale;
 	
 	boolean drag = false; //마우스 드래그 상태인지 여부
 	int startX, startY; //마우스 드래그를 시작한 좌표
@@ -47,6 +60,22 @@ public class MainBoard10X10 extends Canvas //Canvas 클래스를 상속
 		
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
 		this.addMouseMotionListener(this);
+		
+		try {
+			mark = ImageIO.read(new File("resources/image/mark.png"));
+			dog = ImageIO.read(new File("resources/image/dog.png"));
+			snale = ImageIO.read(new File("resources/image/snale.png"));
+			deer = ImageIO.read(new File("resources/image/deer.png"));
+			lp판 = ImageIO.read(new File("resources/image/lp판.png"));
+			coffee = ImageIO.read(new File("resources/image/coffee.png"));
+			kid = ImageIO.read(new File("resources/image/kid.png"));
+			cissors = ImageIO.read(new File("resources/image/가위.png"));
+			kettle = ImageIO.read(new File("resources/image/주전자.png"));
+			candle = ImageIO.read(new File("resources/image/촛불.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -64,84 +93,66 @@ public class MainBoard10X10 extends Canvas //Canvas 클래스를 상속
 		offG.setFont(new Font("SansSerif", Font.BOLD, 14));
 		offG.drawString("10X10", 85,20);
 		if(nemo.getendFlag()) {
-			offG.setColor(Color.black);
-			offG.fillRect(10, 30, 60, 60);
+			offG.drawImage(dog, 10, 30, 75, 85, 0, 0, 251, 251, nemo);
 		}
 		else {
-			offG.setColor(Color.blue);
-			offG.fillRect(10,30,60,60);
+			offG.drawImage(mark, 10, 30, 75, 85, 0, 0, 348, 348, nemo);
 		}
 		
 		if(nemo1.getendFlag()) {
-			offG.setColor(Color.green);
-			offG.fillRect(70, 30, 60, 60);
+			offG.drawImage(snale, 70, 30, 135, 85, 0, 0, 251, 249, nemo1);
 		}
 		else {
-			offG.setColor(Color.red);
-			offG.fillRect(70,30,60,60);
+			offG.drawImage(mark, 70, 30, 135, 85, 0, 0, 348, 348, nemo1);
 		}
 		
 		if(nemo2.getendFlag()) {
-			offG.setColor(Color.yellow);
-			offG.fillRect(130, 30, 60, 60);
+			offG.drawImage(deer, 130, 30, 195, 85, 0, 0, 253, 251, nemo2);
 		}
 		else {
-			offG.setColor(Color.orange);
-			offG.fillRect(130,30,60,60);
+			offG.drawImage(mark, 130, 30, 195, 85, 0, 0, 348, 348, nemo2);
 		}
 		
 		if(nemo3.getendFlag()) {
-			offG.setColor(Color.pink);
-			offG.fillRect(10, 90, 60, 60);
+			offG.drawImage(lp판, 10, 90, 75, 145, 0, 0, 253, 251, nemo3);
 		}
 		else {
-			offG.setColor(Color.gray);
-			offG.fillRect(10,90,60,60);
+			offG.drawImage(mark, 10, 90, 75, 145, 0, 0, 348, 348, nemo3);
 		}
 		
 		if(nemo4.getendFlag()) {
-			offG.setColor(Color.cyan);
-			offG.fillRect(70, 30, 60, 60);
+			offG.drawImage(coffee, 70, 90, 135, 145, 0, 0, 253, 251, nemo4);
 		}
 		else {
-			offG.setColor(Color.black);
-			offG.fillRect(70,90,60,60);
+			offG.drawImage(mark, 70, 90, 135, 145, 0, 0, 348, 348, nemo4);
 		}
 		
 		if(nemo5.getendFlag()) {
-			offG.setColor(Color.red);
-			offG.fillRect(130, 30, 60, 60);
+			offG.drawImage(kid, 130, 90, 195, 145, 0, 0, 253, 251, nemo5);
 		}
 		else {
-			offG.setColor(Color.cyan);
-			offG.fillRect(130,90,60,60);
+			offG.drawImage(mark, 130, 90, 195, 145, 0, 0, 348, 348, nemo5);
 		}
 		
 		if(nemo6.getendFlag()) {
-			offG.setColor(Color.blue);
-			offG.fillRect(10, 150, 60, 60);
+			offG.drawImage(cissors, 10, 150, 75, 205, 0, 0, 499, 505, nemo6);
 		}
 		else {
-			offG.setColor(Color.yellow);
-			offG.fillRect(10,150,60,60);
+			offG.drawImage(mark, 10, 150, 75, 205, 0, 0, 348, 348, nemo6);
 		}
 		
-		if(nemo6.getendFlag()) {
-			offG.setColor(Color.gray);
-			offG.fillRect(70, 150, 60, 60);
+		if(nemo7.getendFlag()) {
+			offG.drawImage(kettle, 70, 150, 135, 205, 0, 0, 409, 501, nemo7);
 		}
 		else {
-			offG.setColor(Color.green);
-			offG.fillRect(70, 150, 60, 60);
+			offG.drawImage(mark, 70, 150, 135, 205, 0, 0, 348, 348, nemo7);
 		}
 		
-		if(nemo6.getendFlag()) {
-			offG.setColor(Color.orange);
-			offG.fillRect(130, 150, 60, 60);
+		if(nemo8.getendFlag()) {
+			offG.drawImage(candle, 130, 150, 195, 205, 0, 0, 503, 503, nemo8);
 		}
 		else {
-			offG.setColor(Color.pink);
-			offG.fillRect(130, 150, 60, 60);
+			offG.drawImage(mark, 130, 150, 195, 205, 0, 0, 348, 348, nemo8);
 		}
 		
 		g.drawImage(offScr, 0, 0, null); //가상 화면을 실제 화면으로 복사

@@ -28,7 +28,7 @@ public class MainPanel10X10 extends JPanel
 			board1 = new MainBoard10X10(this);
 			this.add(board1);
 			board1.setFont(new Font("SansSerif", Font.BOLD, 14));
-			board1.setBounds(120, 120, 201, 201);
+			board1.setBounds(120, 120, 600, 600);
 			bgplay();
 		}
 		

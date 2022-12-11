@@ -107,6 +107,6 @@ public class Nemonemo3 extends AbNemo{
 	}
 	
 	public boolean getendFlag() {
-		return Nemonemo2.endFlag;
+		return Nemonemo3.endFlag;
 	}
 }
