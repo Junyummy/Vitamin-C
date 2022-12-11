@@ -26,6 +26,7 @@ public class MainBoard10X10 extends Canvas //Canvas 클래스를 상속
 	Nemonemo6 nemo6;
 	Nemonemo7 nemo7;
 	Nemonemo8 nemo8;
+	MainPanel15X15 mainp2;
 	
 	Image mark;
 	Image candle;
@@ -57,6 +58,7 @@ public class MainBoard10X10 extends Canvas //Canvas 클래스를 상속
 		nemo6 = new Nemonemo6(win);
 		nemo7 = new Nemonemo7(win);
 		nemo8 = new Nemonemo8(win);
+		mainp2 = new MainPanel15X15(win);
 		
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
 		this.addMouseMotionListener(this);

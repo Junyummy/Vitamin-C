@@ -29,8 +29,19 @@ public class MainPanel10X10 extends JPanel
 			this.add(board1);
 			board1.setFont(new Font("SansSerif", Font.BOLD, 14));
 			board1.setBounds(120, 120, 600, 600);
+			JButton btn = new JButton("15X15");
+	        btn.setSize(110, 20);
+	        btn.setLocation(751, 401);
+	        add(btn);
+	        btn.addActionListener(new MyActionListener());
 			bgplay();
 		}
+		class MyActionListener implements ActionListener { // 버튼 키 눌리면 패널 1번 호출
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                win.change("mainp2");
+            }
+        }
 		
 		private void bgplay() {
 			Player jlPlayer = null;

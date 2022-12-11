@@ -2,7 +2,6 @@ import javax.swing.*; //스윙 패키지 선언
 import java.awt.*; //Font 상수 등을 위한 awt 패키지 선언
 import java.awt.event.*;
 import java.io.*;
-import javax.swing.JMenu;
 
 //JFrame으로부터 상속받은 CloseableFrame 상속
 public class OtherFrame extends JFrame 
@@ -18,6 +17,7 @@ public class OtherFrame extends JFrame
 	Nemonemo6  nemo6;
 	Nemonemo7  nemo7;
 	Nemonemo8  nemo8;
+
 	//메뉴
 	JMenuBar menuBar = new JMenuBar();
 	JMenu gameMenu = new JMenu("Game");
@@ -26,16 +26,17 @@ public class OtherFrame extends JFrame
 	//부착(add)할 클래스의 선언
 	Nemo2Dog board;
 	MainBoard10X10 board1;
+	MainBoard15X15 board2;
 	Column col;
 	Row row;
 	
 	public OtherFrame()
-	{
-		
+	{	
 		 JPanelTest win = new JPanelTest();
 		 win.setJMenuBar(createMenuBar());
 	     win.setTitle("frame test");
 	     win.mainp = new MainPanel10X10(win);
+	     win.mainp2 = new MainPanel15X15(win);
 	     win.nemo = new Nemonemo(win);
 	     win.nemo1 = new Nemonemo1(win);
 	     win.nemo2 = new Nemonemo2(win);
@@ -52,6 +53,8 @@ public class OtherFrame extends JFrame
 	     win.setSize(900, 900);
 	     win.setVisible(true);
 	     win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	     
+
 	
 	}
 		
@@ -105,7 +108,8 @@ public class OtherFrame extends JFrame
 
 	public class JPanelTest extends JFrame {
 		 
-	    public MainPanel10X10 mainp = null;
+	    public MainPanel15X15 mainp2;
+		public MainPanel10X10 mainp = null;
 	    public Nemonemo nemo = null;
 	    public Nemonemo1 nemo1 = null;
 	    public Nemonemo2 nemo2 = null;
@@ -179,12 +183,19 @@ public class OtherFrame extends JFrame
 	            revalidate();
 	            repaint();
 	        }
+	        else if(panelName.equals("mainp2")) {
+	        	getContentPane().removeAll();
+	            getContentPane().add(mainp2);
+	            revalidate();
+	            repaint();
+	        }
 	        else {
 	        	getContentPane().removeAll();
 	            getContentPane().add(nemo15);
 	            revalidate();
 	            repaint();
 	        }
+
 	    }
 	    
 	 
