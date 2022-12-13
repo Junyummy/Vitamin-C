@@ -255,45 +255,42 @@ public class Nemo2LP extends Canvas //Canvas 클래스를 상속
 				stopX = startX;
 				stopY = startY;
 			}
-			if('0' == parent.data.charAt(10*(startY)+startX)) {
-				parent.temp[startY*10+startX] = 2;
-				parent.heart--;
-				if(parent.heart == 0) {
-					parent.win.change("mainp");
-				}
-			}
-			else if('0' == parent.data.charAt(10*(stopY)+stopX)) {
-				if(startX == endX) {
-					for(int j=startX; j<stopX+1; j++) {
-						for(int i=startY; i<stopY; i++) {
-								parent.temp[i*10+j] = 1;
-						}
-					}
-				}
-				else if(startY == endY) {
-					for(int j=startY; j<stopY+1; j++) {
-						for(int i=startX; i<stopX; i++) {
-							parent.temp[j*10+i] = 1;
-						}
-					}
-				}
-				parent.temp[stopY*10+stopX] = 2;
-				parent.heart--;
-				if(parent.heart == 0) {
-					parent.win.change("mainp");
-				}
-				
+			if((e.getModifiers() & InputEvent.BUTTON3_MASK)!=0) {
+				setTemp(x, y, 2);
 			}
 			else {
-				if((e.getModifiers() & InputEvent.BUTTON3_MASK)!=0) 
-					//마우스 오른쪽 버튼
-					{
-						setTemp(x, y, 2);
+				if('0' == parent.data.charAt(10*(startY)+startX)) {
+					parent.temp[startY*10+startX] = 2;
+					parent.heart--;
+					if(parent.heart == 0) {
+						parent.win.change("mainp");
 					}
-				else //마우스 왼쪽 버튼 
-					{
+				}
+				else if('0' == parent.data.charAt(10*(stopY)+stopX)) {
+					if(startX == endX) {
+						for(int j=startX; j<stopX+1; j++) {
+							for(int i=startY; i<stopY; i++) {
+									parent.temp[i*10+j] = 1;
+							}
+						}
+					}
+					else if(startY == endY) {
+						for(int j=startY; j<stopY+1; j++) {
+							for(int i=startX; i<stopX; i++) {
+								parent.temp[j*10+i] = 1;
+							}
+						}
+					}
+					parent.temp[stopY*10+stopX] = 2;
+					parent.heart--;
+					if(parent.heart == 0) {
+						parent.win.change("mainp");
+					}
+					
+				}
+				else {
 						setTemp(x, y, 1);
-					}
+				}
 			}
 		}
 		else if(this.itemtool == 2) {
