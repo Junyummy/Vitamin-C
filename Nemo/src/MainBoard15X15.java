@@ -9,6 +9,10 @@ import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class MainBoard15X15 extends Canvas
 	implements MouseListener, MouseMotionListener
@@ -24,6 +28,17 @@ public class MainBoard15X15 extends Canvas
 	Nemonemo15X7 nemo15X7;
 	Nemonemo15X8 nemo15X8;
 	Nemonemo15X9 nemo15X9;
+	
+	Image phone;
+	Image cow;
+	Image mikimouse;
+	Image Penguin;
+	Image rabbit;
+	Image wing;
+	Image boots;
+	Image cross;
+	Image arrow;
+	Image mark;
 
 	
 	boolean drag = false; //마우스 드래그 상태인지 여부
@@ -50,6 +65,22 @@ public class MainBoard15X15 extends Canvas
 	
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
 		this.addMouseMotionListener(this);
+		
+		try {
+			phone = ImageIO.read(new File("resources/image/phone.png"));
+			cow = ImageIO.read(new File("resources/image/cow.png"));
+			mikimouse = ImageIO.read(new File("resources/image/mikimouse.png"));
+			Penguin = ImageIO.read(new File("resources/image/펭귄.png"));
+			rabbit = ImageIO.read(new File("resources/image/rabbit.png"));
+			wing = ImageIO.read(new File("resources/image/wing.png"));
+			boots = ImageIO.read(new File("resources/image/boots.png"));
+			cross = ImageIO.read(new File("resources/image/cross.png"));
+			arrow = ImageIO.read(new File("resources/image/arrow.png"));
+			mark = ImageIO.read(new File("resources/image/mark.png")); 
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 
@@ -68,86 +99,73 @@ public class MainBoard15X15 extends Canvas
 		offG.drawString("15X15", 85,20);
 	
 		if(nemo15X1.getendFlag()) {
-			offG.setColor(Color.black);
-			offG.fillRect(10, 30, 60, 60);
+			offG.drawImage(phone, 10, 30, 75, 85, 0, 0, 570, 570, nemo15X1);
 		}
-	
 		else {
-			offG.setColor(Color.blue);
-			offG.fillRect(10,30,60,60);
+			offG.drawImage(mark, 10, 30, 75, 85, 0, 0, 348, 348, nemo15X1);
 		}
-	
+		
 		if(nemo15X2.getendFlag()) {
-			offG.setColor(Color.green);
-			offG.fillRect(70, 30, 60, 60);
+			offG.drawImage(cow, 70, 30, 135, 85, 0, 0, 570, 570, nemo15X2);
 		}
 		else {
-			offG.setColor(Color.red);
-			offG.fillRect(70,30,60,60);
+			offG.drawImage(mark, 70, 30, 135, 85, 0, 0, 348, 348, nemo15X2);
 		}
-	
+		
+		if(nemo15X2.getendFlag()) {
+			offG.drawImage(cow, 130, 30, 195, 85, 0, 0, 570, 570, nemo15X2);
+		}
+		else {
+			offG.drawImage(mark, 130, 30, 195, 85, 0, 0, 348, 348, nemo15X2);
+		}
+		
 		if(nemo15X3.getendFlag()) {
-			offG.setColor(Color.yellow);
-			offG.fillRect(130, 30, 60, 60);
+			offG.drawImage(mikimouse, 10, 90, 75, 145, 0, 0, 570, 570, nemo15X3);
 		}
 		else {
-			offG.setColor(Color.orange);
-			offG.fillRect(130,30,60,60);
-		}	
-	
+			offG.drawImage(mark, 10, 90, 75, 145, 0, 0, 348, 348, nemo15X3);
+		}
+		
 		if(nemo15X4.getendFlag()) {
-		offG.setColor(Color.pink);
-		offG.fillRect(10, 90, 60, 60);
-	}
-	else {
-		offG.setColor(Color.gray);
-		offG.fillRect(10,90,60,60);
-	}
-	
-	if(nemo15X5.getendFlag()) {
-		offG.setColor(Color.cyan);
-		offG.fillRect(70, 30, 60, 60);
-	}
-	else {
-		offG.setColor(Color.black);
-		offG.fillRect(70,90,60,60);
-	}
-	
-	if(nemo15X6.getendFlag()) {
-		offG.setColor(Color.red);
-		offG.fillRect(130, 30, 60, 60);
-	}
-	else {
-		offG.setColor(Color.cyan);
-		offG.fillRect(130,90,60,60);
-	}
-	
-	if(nemo15X7.getendFlag()) {
-		offG.setColor(Color.blue);
-		offG.fillRect(10, 150, 60, 60);
-	}
-	else {
-		offG.setColor(Color.yellow);
-		offG.fillRect(10,150,60,60);
-	}
-	
-	if(nemo15X8.getendFlag()) {
-		offG.setColor(Color.gray);
-		offG.fillRect(70, 150, 60, 60);
-	}
-	else {
-		offG.setColor(Color.green);
-		offG.fillRect(70, 150, 60, 60);
-	}
-	
-	if(nemo15X9.getendFlag()) {
-		offG.setColor(Color.orange);
-		offG.fillRect(130, 150, 60, 60);
-	}
-	else {
-		offG.setColor(Color.pink);
-		offG.fillRect(130, 150, 60, 60);
-	}
+			offG.drawImage(Penguin, 70, 90, 135, 145, 0, 0, 570, 570, nemo15X4);
+		}
+		else {
+			offG.drawImage(mark, 70, 90, 135, 145, 0, 0, 348, 348, nemo15X4);
+		}
+		
+		if(nemo15X5.getendFlag()) {
+			offG.drawImage(rabbit, 130, 90, 195, 145, 0, 0, 570, 570, nemo15X5);
+		}
+		else {
+			offG.drawImage(mark, 130, 90, 195, 145, 0, 0, 570, 570, nemo15X5);
+		}
+		
+		if(nemo15X6.getendFlag()) {
+			offG.drawImage(wing, 10, 150, 75, 205, 0, 0, 570, 570, nemo15X6);
+		}
+		else {
+			offG.drawImage(mark, 10, 150, 75, 205, 0, 0, 348, 348, nemo15X6);
+		}
+		
+		if(nemo15X7.getendFlag()) {
+			offG.drawImage(boots, 70, 150, 135, 205, 0, 0, 570, 570, nemo15X7);
+		}
+		else {
+			offG.drawImage(mark, 70, 150, 135, 205, 0, 0, 348, 348, nemo15X7);
+		}
+		
+		if(nemo15X8.getendFlag()) {
+			offG.drawImage(cross, 130, 150, 195, 205, 0, 0, 570, 570, nemo15X8);
+		}
+		else {
+			offG.drawImage(mark, 130, 150, 195, 205, 0, 0, 348, 348, nemo15X8);
+		}
+		if(nemo15X9.getendFlag()) {
+			offG.drawImage(arrow, 130, 150, 195, 205, 0, 0, 570, 570, nemo15X9);
+		}
+		else {
+			offG.drawImage(mark, 130, 150, 195, 205, 0, 0, 348, 348, nemo15X9);
+		}
 	offG.setColor(Color.black);
 	offG.fillRect(400, 400, 40, 40);
 	g.drawImage(offScr, 0, 0, null); //가상 화면을 실제 화면으로 복사
