@@ -34,7 +34,7 @@ public class OtherFrame extends JFrame
 	JMenu helpMenu = new JMenu("Help");
 	
 	//부착(add)할 클래스의 선언
-	Nemo2Dog board;
+	
 	MainBoard10X10 board1;
 	MainBoard15X15 board2;
 	Column col;
@@ -69,9 +69,11 @@ public class OtherFrame extends JFrame
 	     win.setBackground(Color.white);
 	     win.add(win.mainp);
 	     win.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-	     win.setSize(900, 900);
+	     win.setSize(1200, 1200);
 	     win.setVisible(true);
 	     win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	     
+	    
 	     
 	}
 		

@@ -95,79 +95,71 @@ public class MainBoard15X15 extends Canvas
 		initBufferd();
 		offG.clearRect(0, 0, dim.width, dim.height);
 		offG.setColor(Color.black);
-		offG.setFont(new Font("SansSerif", Font.BOLD, 14));
-		offG.drawString("15X15", 85,20);
+		offG.setFont(new Font("SansSerif", Font.BOLD, 20));
+		offG.drawString("15X15", 275,20);
 	
 		if(nemo15X1.getendFlag()) {
-			offG.drawImage(phone, 10, 30, 75, 85, 0, 0, 570, 570, nemo15X1);
+			offG.drawImage(phone, 55, 30, 185, 205, 0, 0, 564, 567, nemo15X1);
 		}
 		else {
-			offG.drawImage(mark, 10, 30, 75, 85, 0, 0, 348, 348, nemo15X1);
+			offG.drawImage(mark, 55, 30, 185, 205, 0, 0, 348, 348, nemo15X1);
 		}
 		
 		if(nemo15X2.getendFlag()) {
-			offG.drawImage(cow, 70, 30, 135, 85, 0, 0, 570, 570, nemo15X2);
+			offG.drawImage(cow, 235, 30, 365, 205, 0, 0, 563, 564, nemo15X2);
 		}
 		else {
-			offG.drawImage(mark, 70, 30, 135, 85, 0, 0, 348, 348, nemo15X2);
-		}
-		
-		if(nemo15X2.getendFlag()) {
-			offG.drawImage(cow, 130, 30, 195, 85, 0, 0, 570, 570, nemo15X2);
-		}
-		else {
-			offG.drawImage(mark, 130, 30, 195, 85, 0, 0, 348, 348, nemo15X2);
+			offG.drawImage(mark, 235, 30, 365, 205, 0, 0, 348, 348, nemo15X2);
 		}
 		
 		if(nemo15X3.getendFlag()) {
-			offG.drawImage(mikimouse, 10, 90, 75, 145, 0, 0, 570, 570, nemo15X3);
+			offG.drawImage(mikimouse, 415, 30, 545, 205, 0, 0, 566, 566, nemo15X3);
 		}
 		else {
-			offG.drawImage(mark, 10, 90, 75, 145, 0, 0, 348, 348, nemo15X3);
+			offG.drawImage(mark, 415, 30, 545, 205, 0, 0, 348, 348, nemo15X3);
 		}
 		
 		if(nemo15X4.getendFlag()) {
-			offG.drawImage(Penguin, 70, 90, 135, 145, 0, 0, 570, 570, nemo15X4);
+			offG.drawImage(Penguin, 55, 255, 185, 425, 0, 0, 565, 569, nemo15X4);
 		}
 		else {
-			offG.drawImage(mark, 70, 90, 135, 145, 0, 0, 348, 348, nemo15X4);
+			offG.drawImage(mark, 55, 255, 185, 425, 0, 0, 348, 348, nemo15X4);
 		}
 		
 		if(nemo15X5.getendFlag()) {
-			offG.drawImage(rabbit, 130, 90, 195, 145, 0, 0, 570, 570, nemo15X5);
+			offG.drawImage(rabbit, 235, 255, 365, 425, 0, 0, 568, 565, nemo15X5);
 		}
 		else {
-			offG.drawImage(mark, 130, 90, 195, 145, 0, 0, 570, 570, nemo15X5);
+			offG.drawImage(mark, 235, 255, 365, 425, 0, 0, 348, 348, nemo15X5);
 		}
 		
 		if(nemo15X6.getendFlag()) {
-			offG.drawImage(wing, 10, 150, 75, 205, 0, 0, 570, 570, nemo15X6);
+			offG.drawImage(wing, 415, 255, 545, 425, 0, 0, 562, 562, nemo15X6);
 		}
 		else {
-			offG.drawImage(mark, 10, 150, 75, 205, 0, 0, 348, 348, nemo15X6);
+			offG.drawImage(mark, 415, 255, 545, 425, 0, 0, 348, 348, nemo15X6);
 		}
 		
 		if(nemo15X7.getendFlag()) {
-			offG.drawImage(boots, 70, 150, 135, 205, 0, 0, 570, 570, nemo15X7);
+			offG.drawImage(boots, 55, 475, 185, 650, 0, 0, 567, 564, nemo15X7);
 		}
 		else {
-			offG.drawImage(mark, 70, 150, 135, 205, 0, 0, 348, 348, nemo15X7);
+			offG.drawImage(mark, 55, 475, 185, 650, 0, 0, 348, 348, nemo15X7);
 		}
 		
 		if(nemo15X8.getendFlag()) {
-			offG.drawImage(cross, 130, 150, 195, 205, 0, 0, 570, 570, nemo15X8);
+			offG.drawImage(cross, 235, 475, 365, 650, 0, 0, 451, 453, nemo15X8);
 		}
 		else {
-			offG.drawImage(mark, 130, 150, 195, 205, 0, 0, 348, 348, nemo15X8);
+			offG.drawImage(mark, 235, 475, 365, 650, 0, 0, 348, 348, nemo15X8);
 		}
+		
 		if(nemo15X9.getendFlag()) {
-			offG.drawImage(arrow, 130, 150, 195, 205, 0, 0, 570, 570, nemo15X9);
+			offG.drawImage(arrow, 415, 475, 545, 650, 0, 0, 565, 564, nemo15X9);
 		}
 		else {
-			offG.drawImage(mark, 130, 150, 195, 205, 0, 0, 348, 348, nemo15X9);
+			offG.drawImage(mark, 415, 475, 545, 650, 0, 0, 348, 348, nemo15X9);
 		}
-	offG.setColor(Color.black);
-	offG.fillRect(400, 400, 40, 40);
 	g.drawImage(offScr, 0, 0, null); //가상 화면을 실제 화면으로 복사
 }
 
@@ -212,35 +204,32 @@ public void mouseReleased(MouseEvent e) {
 	}
 	else //마우스 왼쪽 버튼 
 	{
-		if((x>29 && x<91) && (y>29 && y<91)) {
+		if((x>54 && x<186) && (y>29 && y<206)) {
 			parent.win.change("nemo15X1");
 		}
-		if((x>89 && x<151) && (y>29 && y<91)) {
+		if((x>234 && x<366) && (y>29 && y<206)) {
 			parent.win.change("nemo15X2");
 		}
-		if((x>149 && x<211) && (y>29 && y<91)) {
+		if((x>414 && x<546) && (y>29 && y<206)) {
 			parent.win.change("nemo15X3");
 		}
-		if((x>29 && x<91) && (y>89 && y<151)) {
+		if((x>54 && x<186) && (y>254 && y<426)) {
 			parent.win.change("nemo15X4");
 		}
-		if((x>89 && x<151) && (y>89 && y<151)) {
+		if((x>234 && x<366) && (y>254 && y<426)) {
 			parent.win.change("nemo15X5");
 		}
-		if((x>149 && x<211) && (y>89 && y<151)) {
+		if((x>414 && x<546) && (y>254 && y<426)) {
 			parent.win.change("nemo15X6");
 		}
-		if((x>29 && x<91) && (y>159 && y<211)) {
+		if((x>29 && x<186) && (y>474 && y<651)) {
 			parent.win.change("nemo15X7");
 		}
-		if((x>89 && x<151) && (y>159 && y<211)) {
+		if((x>234 && x<366) && (y>474 && y<651)) {
 			parent.win.change("nemo15X8");
 		}
-		if((x>149 && x<211) && (y>159 && y<211)) {
+		if((x>414 && x<546) && (y>474 && y<651)) {
 			parent.win.change("nemo15X9");
-		}
-		if((x>399 && x<441) && (y>399 && y<441)) {
-			parent.win.change("mainp");
 		}
 	}
 }

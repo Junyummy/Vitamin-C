@@ -27,11 +27,11 @@ public class MainPanel15X15 extends JPanel{
 		board2 = new MainBoard15X15(this);
 		this.add(board2);
 		board2.setFont(new Font("SansSerif", Font.BOLD, 14));
-		board2.setBounds(120, 120, 601, 601);
+		board2.setBounds(270, 120, 600, 680);
 		bgplay();
 		JButton btn = new JButton("10X10");
 	    btn.setSize(110, 20);
-        btn.setLocation(7, 391);
+        btn.setLocation(120, 455);
         add(btn);
         btn.addActionListener(new MyActionListener());
         bgplay();
