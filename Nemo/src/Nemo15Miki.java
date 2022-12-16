@@ -23,6 +23,7 @@ int stopX, stopY;
 
 Image Life;
 Image Boom;
+Image Check;
 
 int itemtool = 1;
 int Selrect = 1;
@@ -41,6 +42,7 @@ public Nemo15Miki(Nemonemo15X3 nemo) //Nemonemo 클래스의 객체를 보관하
 	try {
 		Life = ImageIO.read(new File("resources/Life.png"));
 		Boom = ImageIO.read(new File("resources/boom.png"));
+		Check = ImageIO.read(new File("resources/check.png"));
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -156,7 +158,7 @@ public void paint (Graphics g) //화면에 보드의 상태를 출력
 	offG.drawImage(Boom, 30, 530, 110, 610, 0, 0, 3000, 3000, this);
 	offG.drawRect(29, 530, 81, 81);
 	offG.drawRect(28, 529, 83, 83);
-	offG.drawImage(Boom, 120, 530, 200, 610, 0, 0, 3000, 3000, this);
+	offG.drawImage(Check, 120, 530, 200, 610, 0, 0, 3000, 3000, this);
 	offG.drawRect(119, 530, 81, 81);
 	offG.drawRect(118, 529, 83, 83);
 	g.drawImage(offScr, 0, 0, null); //가상 화면을 실제 화면으로 복사

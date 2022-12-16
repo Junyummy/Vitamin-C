@@ -16,6 +16,7 @@ public class Nemo2Scissors extends Canvas //Canvas 클래스를 상속
 	
 	Image Life;
 	Image Boom;
+	Image Check;
 	
 	int itemtool = 1;
 	int Selrect = 1;
@@ -34,6 +35,7 @@ public class Nemo2Scissors extends Canvas //Canvas 클래스를 상속
 		try {
 			Life = ImageIO.read(new File("resources/Life.png"));
 			Boom = ImageIO.read(new File("resources/boom.png"));
+			Check = ImageIO.read(new File("resources/check.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -149,7 +151,7 @@ public class Nemo2Scissors extends Canvas //Canvas 클래스를 상속
 		offG.drawImage(Boom, 30, 430, 110, 510, 0, 0, 3000, 3000, this);
 		offG.drawRect(29, 430, 81, 81);
 		offG.drawRect(28, 429, 83, 83);
-		offG.drawImage(Boom, 120, 430, 200, 510, 0, 0, 3000, 3000, this);
+		offG.drawImage(Check, 120, 430, 200, 510, 0, 0, 3000, 3000, this);
 		offG.drawRect(119, 430, 81, 81);
 		offG.drawRect(118, 429, 83, 83);
 		g.drawImage(offScr, 0, 0, null); //가상 화면을 실제 화면으로 복사

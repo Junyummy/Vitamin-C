@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import javazoom.jl.player.Player;
+import junit.framework.Test;
 
 
 public class MainPanel10X10 extends JPanel
@@ -51,7 +52,7 @@ public class MainPanel10X10 extends JPanel
 		private void bgplay() {
 			Player jlPlayer = null;
 	        try {
-	            FileInputStream fileInputStream = new FileInputStream("resources/Empty.mp3");
+	            FileInputStream fileInputStream = new FileInputStream("resources/Maintheme.mp3");
 	            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
 	            jlPlayer = new Player(bufferedInputStream);
 	        } catch (Exception e) {
