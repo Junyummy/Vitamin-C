@@ -8,19 +8,20 @@ import javax.swing.JPanel;
 
 public class Nemonemo7 extends AbNemo{
 
-	OtherFrame other;
+	MainFrame other;
 	JPanel nemo7;
 	
 	int heart = 4;
 	Nemo2Kettle board;
 	Column7 col;
 	Row7 row;
+	Backbutton1 backbt;
 	
 	String data = "0000100000000111000000110110001010001000101111100011100011111100010101010011010101000001010111111100"; //주전자
 	
 	public static boolean endFlag = false; //퍼즐이 풀렸는지 여부
 	
-	public Nemonemo7(OtherFrame.JPanelTest win)
+	public Nemonemo7(MainFrame.JPanelTest win)
 	{
 		setLayout(null);
 		this.win = win;
@@ -42,33 +43,26 @@ public class Nemonemo7 extends AbNemo{
 		col = new Column7(this);
 		this.add(col);
 		col.setFont(new Font("SansSerif", Font.BOLD, 14));
-		col.setBounds(120, 0, 900, 120);
+		col.setBounds(390, 120, 480, 120);
 		col.repaint();
 			
 		//row 생성
 		row = new Row7(this);
 		this.add(row);
 		row.setFont(new Font("SansSerif", Font.BOLD, 14));
-		row.setBounds(0, 120, 120, 900);
+		row.setBounds(270, 240, 120, 600);
 			
 		//board 생성
 		board = new Nemo2Kettle(this);
 		this.add(board);
 		board.setFont(new Font("SansSerif", Font.BOLD, 14));
-		board.setBounds(120, 120, 900, 900);
+		board.setBounds(390, 240, 480, 600);
 		
-		JButton btn = new JButton("버튼");
-        btn.setSize(70, 20);
-        btn.setLocation(10, 10);
-        add(btn);
-        btn.addActionListener(new MyActionListener());
+		backbt = new Backbutton1(win);
+		this.add(backbt);
+		backbt.setFont(new Font("SansSerif", Font.BOLD, 14));
+		backbt.setBounds(270, 120, 390, 240);
 	}
-		class MyActionListener implements ActionListener { // 버튼 키 눌리면 패널 1번 호출
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                win.change("mainp");
-            }
-}
 	
 	
 	@Override

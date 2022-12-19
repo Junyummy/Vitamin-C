@@ -14,12 +14,12 @@ import junit.framework.Test;
 
 public class MainPanel10X10 extends JPanel
 	{	
-		OtherFrame.JPanelTest win;
+		MainFrame.JPanelTest win;
 		JPanel Mainp;
 		Test board;
 		MainBoard10X10 board1;
 		
-		public MainPanel10X10(OtherFrame.JPanelTest win){
+		public MainPanel10X10(MainFrame.JPanelTest win){
 			setLayout(null);
 			this.win = win;
 
@@ -36,8 +36,8 @@ public class MainPanel10X10 extends JPanel
 			
 			
 			JButton btn = new JButton("15X15");
-	        btn.setSize(110, 20);
-	        btn.setLocation(901, 455);
+	        btn.setSize(100, 100);
+	        btn.setLocation(901, 405);
 	        add(btn);
 	        btn.addActionListener(new MyActionListener());
 			bgplay();

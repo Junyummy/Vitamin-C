@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class PhoneBoard extends Canvas //Canvas 클래스를 상속
+public class Nemo15Phone extends Canvas //Canvas 클래스를 상속
 	implements MouseListener, MouseMotionListener
 {	
 	Nemonemo15X1 parent; //Nemonemo 클래스의 객체를 저장
@@ -27,7 +27,7 @@ public class PhoneBoard extends Canvas //Canvas 클래스를 상속
 	Image offScr; //더블버퍼링을 위한 가상 화면
 	Graphics offG;
 	
-	public PhoneBoard(Nemonemo15X1 nemo) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
+	public Nemo15Phone(Nemonemo15X1 nemo) //Nemonemo 클래스의 객체를 보관하고 리스너를 선언
 	{
 		this.parent = nemo; //Nemonemo 클래스의 객체를 보관
 		this.addMouseListener(this); //마우스 사용을 위한 리스너 선언
@@ -267,7 +267,12 @@ public class PhoneBoard extends Canvas //Canvas 클래스를 상속
 					parent.temp[startY*15+startX] = 2;
 					parent.heart--;
 					if(parent.heart == 0) {
-						parent.win.change("mainp");
+						for(int i=0; i<100; i++) //플레이어가 입력하기 전에 0으로 모두 초기화
+						{
+							parent.temp[i] = 0;
+						}
+						parent.heart = 4;
+						parent.win.change("mainp2");
 					}
 				}
 				else if('0' == parent.data.charAt(15*(stopY)+stopX)) {
@@ -288,7 +293,12 @@ public class PhoneBoard extends Canvas //Canvas 클래스를 상속
 					parent.temp[stopY*15+stopX] = 2;
 					parent.heart--;
 					if(parent.heart == 0) {
-						parent.win.change("mainp");
+						for(int i=0; i<100; i++) //플레이어가 입력하기 전에 0으로 모두 초기화
+						{
+							parent.temp[i] = 0;
+						}
+						parent.heart = 4;
+						parent.win.change("mainp2");
 					}
 					
 				}

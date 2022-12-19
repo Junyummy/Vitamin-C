@@ -274,7 +274,12 @@ public void mouseReleased(MouseEvent e)
 				parent.temp[startY*15+startX] = 2;
 				parent.heart--;
 				if(parent.heart == 0) {
-					parent.win.change("mainp");
+					for(int i=0; i<100; i++) //플레이어가 입력하기 전에 0으로 모두 초기화
+					{
+						parent.temp[i] = 0;
+					}
+					parent.heart = 4;
+					parent.win.change("mainp2");
 				}
 			}
 			else if('0' == parent.data.charAt(15*(stopY)+stopX)) {
@@ -295,7 +300,12 @@ public void mouseReleased(MouseEvent e)
 				parent.temp[stopY*15+stopX] = 2;
 				parent.heart--;
 				if(parent.heart == 0) {
-					parent.win.change("mainp");
+					for(int i=0; i<100; i++) //플레이어가 입력하기 전에 0으로 모두 초기화
+					{
+						parent.temp[i] = 0;
+					}
+					parent.heart = 4;
+					parent.win.change("mainp2");
 				}
 				
 			}

@@ -18,7 +18,7 @@ public class MainBoard15X15 extends Canvas
 	implements MouseListener, MouseMotionListener
 {	
 	MainPanel15X15 parent; //Nemonemo 클래스의 객체를 저장
-	OtherFrame.JPanelTest win;
+	MainFrame.JPanelTest win;
 	Nemonemo15X1 nemo15X1;
 	Nemonemo15X2 nemo15X2;
 	Nemonemo15X3 nemo15X3;

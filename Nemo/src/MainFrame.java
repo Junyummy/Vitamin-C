@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.io.*;
 
 //JFrame으로부터 상속받은 CloseableFrame 상속
-public class OtherFrame extends JFrame 
+public class MainFrame extends JFrame 
 	implements ActionListener
 {
 	JPanel contentPane;
@@ -40,7 +40,7 @@ public class OtherFrame extends JFrame
 	Column col;
 	Row row;
 	
-	public OtherFrame()
+	public MainFrame()
 	{	
 		 JPanelTest win = new JPanelTest();
 		 win.setJMenuBar(createMenuBar());

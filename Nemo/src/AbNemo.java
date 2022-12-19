@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 
 public abstract class AbNemo extends JPanel{
 	
-	OtherFrame.JPanelTest win;
+	MainFrame.JPanelTest win;
 	//마우스 커서의 좌표
 	int mouseX = -1;
 	int mouseY = -1;

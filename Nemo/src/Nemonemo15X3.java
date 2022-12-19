@@ -8,22 +8,23 @@ import javax.swing.JPanel;
 
 public class Nemonemo15X3 extends AbNemo
 {
-	OtherFrame other;
+	MainFrame other;
 	JPanel nemo;
-	OtherFrame.JPanelTest win;
+	MainFrame.JPanelTest win;
 	//메뉴
 	
 	int heart = 4;
 	Nemo15Miki board;
 	Column15X3 col;
 	Row15X3 row;
+	Backbutton2 backbt;
 	//부착(add)할 클래스의 선언
 	
 	String data = "000011111000000000111111100000000111111101110000111111101111000011111011111000001111111111000010100111111000100000011110000101010011100110101010011100111110000110100110000000000100010000000101100001100001011000000011111110000"; //문제의 정답(미키마우스)
 
 	public static boolean endFlag = false; //퍼즐이 풀렸는지 여부
 	
-	public Nemonemo15X3(OtherFrame.JPanelTest win)
+	public Nemonemo15X3(MainFrame.JPanelTest win)
 	{
 		setLayout(null);
 		this.win = win;
@@ -45,32 +46,25 @@ public class Nemonemo15X3 extends AbNemo
 		col = new Column15X3(this);
 		this.add(col);
 		col.setFont(new Font("SansSerif", Font.BOLD, 14));
-		col.setBounds(120, 0, 900, 120);
+		col.setBounds(390, 120, 480, 120);
 		col.repaint();
 			
 		//row 생성
 		row = new Row15X3(this);
 		this.add(row);
 		row.setFont(new Font("SansSerif", Font.BOLD, 14));
-		row.setBounds(0, 120, 120, 900);
+		row.setBounds(270, 240, 120, 700);
 			
 		//board 생성
 		board = new Nemo15Miki(this);
 		this.add(board);
 		board.setFont(new Font("SansSerif", Font.BOLD, 14));
-		board.setBounds(120, 120, 900, 900);
+		board.setBounds(390, 240, 480, 700);
 		
-		JButton btn = new JButton("돌아가기");
-        btn.setSize(110, 20);
-        btn.setLocation(10, 10);
-        add(btn);
-        btn.addActionListener(new MyActionListener());
-	}
-	class MyActionListener implements ActionListener { // 버튼 키 눌리면 패널 1번 호출
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            win.change("mainp2");
-        }
+		backbt = new Backbutton2(win);
+		this.add(backbt);
+		backbt.setFont(new Font("SansSerif", Font.BOLD, 14));
+		backbt.setBounds(270, 120, 390, 240);
     }
 		
 	

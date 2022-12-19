@@ -8,21 +8,22 @@ import javax.swing.JPanel;
 
 public class Nemonemo15X8 extends AbNemo
 {
-	OtherFrame other;
+	MainFrame other;
 	JPanel nemo;
-	OtherFrame.JPanelTest win;
+	MainFrame.JPanelTest win;
 	//메뉴
 	
 	int heart = 4;
 	Nemo15Cross board;
 	Column15X8 col;
 	Row15X8 row;
+	Backbutton2 backbt;
 	//부착(add)할 클래스의 선언
 	//십자가 뒤에 숫자 15개 부족해서 오류나서 일단 0 15개로 채워
 	String data = "000011111110000000011111110000000001010100000000001010100000110001111100011111111000111111110001010100011110001010100011111111000111111110001111100011000001010100000000001010100000000011111110000000011111110000000000000000000"; //문제의 정답(십자가)
 	public static boolean endFlag = false; //퍼즐이 풀렸는지 여부
 	
-	public Nemonemo15X8(OtherFrame.JPanelTest win)
+	public Nemonemo15X8(MainFrame.JPanelTest win)
 	{
 		setLayout(null);
 		this.win = win;
@@ -44,32 +45,25 @@ public class Nemonemo15X8 extends AbNemo
 		col = new Column15X8(this);
 		this.add(col);
 		col.setFont(new Font("SansSerif", Font.BOLD, 14));
-		col.setBounds(120, 0, 900, 120);
+		col.setBounds(390, 120, 480, 120);
 		col.repaint();
 			
 		//row 생성
 		row = new Row15X8(this);
 		this.add(row);
 		row.setFont(new Font("SansSerif", Font.BOLD, 14));
-		row.setBounds(0, 120, 120, 900);
+		row.setBounds(270, 240, 120, 700);
 			
 		//board 생성
 		board = new Nemo15Cross(this);
 		this.add(board);
 		board.setFont(new Font("SansSerif", Font.BOLD, 14));
-		board.setBounds(120, 120, 900, 900);
+		board.setBounds(390, 240, 480, 700);
 		
-		JButton btn = new JButton("돌아가기");
-        btn.setSize(110, 20);
-        btn.setLocation(10, 10);
-        add(btn);
-        btn.addActionListener(new MyActionListener());
-	}
-	class MyActionListener implements ActionListener { // 버튼 키 눌리면 패널 1번 호출
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            win.change("mainp2");
-        }
+		backbt = new Backbutton2(win);
+		this.add(backbt);
+		backbt.setFont(new Font("SansSerif", Font.BOLD, 14));
+		backbt.setBounds(270, 120, 390, 240);
     }
 		
 	

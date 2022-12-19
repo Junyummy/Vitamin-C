@@ -11,12 +11,12 @@ import javax.swing.JPanel;
 import javazoom.jl.player.Player;
 
 public class MainPanel15X15 extends JPanel{	
-	OtherFrame.JPanelTest win;
+	MainFrame.JPanelTest win;
 	JPanel Mainp2;
 	
 	MainBoard15X15 board2;
 	
-	public MainPanel15X15(OtherFrame.JPanelTest win){
+	public MainPanel15X15(MainFrame.JPanelTest win){
 		setLayout(null);
 		this.win = win;
 
@@ -30,8 +30,8 @@ public class MainPanel15X15 extends JPanel{
 		board2.setBounds(270, 120, 600, 680);
 		bgplay();
 		JButton btn = new JButton("10X10");
-	    btn.setSize(110, 20);
-        btn.setLocation(120, 455);
+	    btn.setSize(100, 100);
+        btn.setLocation(120, 405);
         add(btn);
         btn.addActionListener(new MyActionListener());
         bgplay();

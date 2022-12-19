@@ -8,18 +8,19 @@ import javax.swing.JPanel;
 
 public class Nemonemo5 extends AbNemo{
 
-	OtherFrame other;
+	MainFrame other;
 	JPanel nemo5;
 	
 	int heart = 4;
 	Nemo2Kid board;
 	Column5 col;
 	Row5 row;
+	Backbutton1 backbt;
 	
 	String data = "0000111000000111100000001011000110111011011001001101111111110001111100000111110011001010001101101100"; //공놀이 아이
 	public static boolean endFlag = false; //퍼즐이 풀렸는지 여부
 	
-	public Nemonemo5(OtherFrame.JPanelTest win)
+	public Nemonemo5(MainFrame.JPanelTest win)
 	{
 		setLayout(null);
 		this.win = win;
@@ -41,32 +42,25 @@ public class Nemonemo5 extends AbNemo{
 		col = new Column5(this);
 		this.add(col);
 		col.setFont(new Font("SansSerif", Font.BOLD, 14));
-		col.setBounds(120, 0, 900, 120);
+		col.setBounds(390, 120, 480, 120);
 		col.repaint();
 			
 		//row 생성
 		row = new Row5(this);
 		this.add(row);
 		row.setFont(new Font("SansSerif", Font.BOLD, 14));
-		row.setBounds(0, 120, 120, 900);
+		row.setBounds(270, 240, 120, 600);
 			
 		//board 생성
 		board = new Nemo2Kid(this);
 		this.add(board);
 		board.setFont(new Font("SansSerif", Font.BOLD, 14));
-		board.setBounds(120, 120, 900, 900);
+		board.setBounds(390, 240, 480, 600);
 		
-		JButton btn = new JButton("버튼");
-        btn.setSize(70, 20);
-        btn.setLocation(10, 10);
-        add(btn);
-        btn.addActionListener(new MyActionListener());
-	}
-		class MyActionListener implements ActionListener { // 버튼 키 눌리면 패널 1번 호출
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                win.change("mainp");
-            }
+		backbt = new Backbutton1(win);
+		this.add(backbt);
+		backbt.setFont(new Font("SansSerif", Font.BOLD, 14));
+		backbt.setBounds(270, 120, 390, 240);
 }
 	
 	
